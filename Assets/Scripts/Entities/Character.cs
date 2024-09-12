@@ -16,11 +16,13 @@ public class Character : MonoBehaviour
     private CharacterRun _characterRun;
     private IMoveable _movementLogic;
     private CharacterJump _characterJump;
+    
+    [SerializeField] private List<GameObject> _guns;
+    private IGun _currentGun;
 
     #endregion
 
-    [SerializeField] private List<GameObject> _guns;
-    private IGun _currentGun;
+    
 
     // BINDING ATTACK KEYS
     [SerializeField] private KeyCode _shoot = KeyCode.Mouse0;
@@ -50,6 +52,7 @@ public class Character : MonoBehaviour
         _characterJump = GetComponent<CharacterJump>();
 
         //TODO Decidir que arma iniciar
+        GunSelection(0);
     }
 
     // Update is called once per frame
