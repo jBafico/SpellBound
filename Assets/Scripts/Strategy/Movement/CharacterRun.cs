@@ -15,9 +15,10 @@ using UnityEngine;
         #endregion
         
         #region IMOVABLE_METHODS
-        public void Move(Vector3 direction)
+        public void Move(Vector2 direction)
         {
-            transform.position += direction * Time.deltaTime * Speed;
+            Vector3 movement = direction;
+            transform.position +=  movement * Time.deltaTime * Speed;
         }
         
         #endregion

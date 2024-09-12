@@ -59,10 +59,10 @@ public class Character : MonoBehaviour
     void Update()
     {
         /* Movimento */
-        if (Input.GetKey(_moveForward)) _movementLogic.Move(transform.up);
-        if (Input.GetKey(_moveBack)) _movementLogic.Move(-transform.up);
-        if (Input.GetKey(_moveRight)) _movementLogic.Move(transform.right);
-        if (Input.GetKey(_moveLeft)) _movementLogic.Move(-transform.right);
+        if (Input.GetKey(_moveForward)) _movementLogic.Move(Vector2.up);
+        if (Input.GetKey(_moveBack)) _movementLogic.Move(-Vector2.up);
+        if (Input.GetKey(_moveRight)) _movementLogic.Move(Vector2.right);
+        if (Input.GetKey(_moveLeft)) _movementLogic.Move(-Vector2.right);
         
         /* Correr/Caminar */
         if (Input.GetKeyDown(_walkRun)) _movementLogic= _characterRun;
