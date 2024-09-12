@@ -9,6 +9,7 @@ using UnityEngine;
         public float Speed => _speed;
 
         [SerializeField] private float _speed = 10;
+        
 
         #endregion
         
