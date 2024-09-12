@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdf51e2b0f33b8439a323cf67e614e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentBulletCount: 10
+  _currentBulletCount: 4
   _bulletPrefab: {fileID: 594292529811568574, guid: 98541973dee5a9e4092c44e4732db945, type: 3}
 --- !u!1 &7286573535680325673
 GameObject:
