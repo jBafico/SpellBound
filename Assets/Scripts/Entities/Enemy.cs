@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     #region CONSTANT_PROPERTIES
     
-    private string WALK_MOVEMENT_STRATEGY = "CharacterWalk";
+    private string CRAWL_MOVEMENT_STRATEGY = "CharacterCrawl";
     
     //For enemy movement towards players
     public float minDist = 1f;
@@ -14,17 +14,17 @@ public class Enemy : MonoBehaviour
     
     #region PROPERTIES
 
-    private CharacterWalk _characterWalk;
+    private CharacterCrawl _characterCrawl;
     private IMoveable _movementLogic;
     
     #endregion
     
     void Start()
     {
-        AddDynamicComponent(WALK_MOVEMENT_STRATEGY);
+        AddDynamicComponent(CRAWL_MOVEMENT_STRATEGY);
         
-        _characterWalk = GetComponent<CharacterWalk>();
-        _movementLogic = _characterWalk;
+        _characterCrawl = GetComponent<CharacterCrawl>();
+        _movementLogic = _characterCrawl;
         
         // if no target specified, assume the player
         if (target == null) {
