@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8090753171461977200}
   m_Layer: 0
   m_Name: PlayableCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1dea7584cd7df47a79a2638a2f37b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 3777939233525906059}
   _guns:
   - {fileID: 4571744588482120867, guid: 5a68e7f163701764097f72089f30e30f, type: 3}
   _shoot: 323

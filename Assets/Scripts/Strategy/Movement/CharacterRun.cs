@@ -21,5 +21,10 @@ using UnityEngine;
             transform.position +=  movement * Time.deltaTime * Speed;
         }
         
+        public void MoveTowards(Vector2 target)
+        {
+            transform.position = Vector2.MoveTowards(transform.position,target, Speed*Time.deltaTime);
+        }
+        
         #endregion
     }

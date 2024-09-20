@@ -6,6 +6,10 @@ public class Enemy : MonoBehaviour
     #region CONSTANT_PROPERTIES
     
     private string WALK_MOVEMENT_STRATEGY = "CharacterWalk";
+    
+    //For enemy movement towards players
+    public float minDist = 1f;
+    public Transform target;
     #endregion
     
     #region PROPERTIES
@@ -21,6 +25,28 @@ public class Enemy : MonoBehaviour
         
         _characterWalk = GetComponent<CharacterWalk>();
         _movementLogic = _characterWalk;
+        
+        // if no target specified, assume the player
+        if (target == null) {
+
+            if (GameObject.FindWithTag("Player")!=null)
+            {
+                target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (target == null)
+            return;
+        
+        //get the distance between the chaser and the target
+        float distance = Vector2.Distance(transform.position,target.position);
+
+        //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
+        if(distance > minDist)	
+            _movementLogic.MoveTowards(target.position);
     }
 
     #region PRIVATE_METHODS

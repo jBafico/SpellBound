@@ -19,6 +19,11 @@ using UnityEngine;
             Vector3 movement = direction;
             transform.position +=  movement * Time.deltaTime * Speed;
         }
+
+        public void MoveTowards(Vector2 target)
+        {
+            transform.position = Vector2.MoveTowards(transform.position,target, Speed*Time.deltaTime);
+        }
         
         //activar animacion de caminar
         //activar sonidos de pasos de caminar
