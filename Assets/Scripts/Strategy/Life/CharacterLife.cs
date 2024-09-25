@@ -34,15 +34,12 @@ using UnityEngine;
         {
             _currentLife += amount;
             if (_currentLife > _maxLife) _currentLife = _maxLife;
-            
-            
         }
 
         public void TakeDamage(float damage)
         {
             _currentLife -= damage;
             if(_currentLife<=0) Die();
-            
         }
 
         #endregion

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5332219469504848316}
   - component: {fileID: 842861447157498608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mago
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5532948498002027274}
   - component: {fileID: 891773004224289148}
   - component: {fileID: 8090753171461977200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayableCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ Rigidbody2D:
     m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

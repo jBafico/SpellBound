@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6322542381437682144}
   - component: {fileID: 2417784941527819312}
   - component: {fileID: -6348142315182384110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,6 @@ MonoBehaviour:
   _speed: 40
   _lifetime: 2
   _owner: {fileID: 0}
-  force: 0
 --- !u!70 &2417784941527819312
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +108,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -124,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6425067922643681382}
   - component: {fileID: 524961833847218984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4905129132148437910}
   - component: {fileID: 4013729568947594916}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
