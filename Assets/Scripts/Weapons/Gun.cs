@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour, IGun
     private int _maxBulletCount = 10;
     [SerializeField] private int _currentBulletCount;
     [SerializeField] private GameObject _bulletPrefab;
+    
     #endregion
 
     #region I_GUN_PROPERTIES
@@ -27,7 +28,7 @@ public class Gun : MonoBehaviour, IGun
         Reload();
     }
 
-    public virtual void Attack() => Debug.LogWarning("Implement attack Method");
+    public virtual void Attack(Vector3 mousePos) => Debug.LogWarning("Implement attack Method");
 
     public virtual void Reload() => _currentBulletCount = _maxBulletCount;
 

@@ -16,6 +16,8 @@ public class Character : MonoBehaviour
     private CharacterRun _characterRun;
     private IMoveable _movementLogic;
     private CharacterJump _characterJump;
+    //For shooting directions
+    private Camera _mainCam;
     
     [SerializeField] private List<GameObject> _guns;
     private IGun _currentGun;
@@ -53,6 +55,8 @@ public class Character : MonoBehaviour
 
         //TODO Decidir que arma iniciar
         GunSelection(0);
+        
+        _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -70,7 +74,7 @@ public class Character : MonoBehaviour
         
         
         /* Armas */
-        if (Input.GetKeyDown(_shoot)) _currentGun.Attack();
+        if (Input.GetKeyDown(_shoot)) _currentGun.Attack(_mainCam.ScreenToWorldPoint(Input.mousePosition));
         if (Input.GetKeyDown(_reload)) _currentGun.Reload();
         
         /* Selección de arma */

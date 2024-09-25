@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour, IBullet
     [SerializeField] private float _lifetime = 2;
 
     [SerializeField] private Gun _owner;
+
+    private Vector3 _mousePos;
+    private Camera _mainCam;
     #endregion
 
     #region I_BULLET_PROPERTIES
@@ -16,7 +19,11 @@ public class Bullet : MonoBehaviour, IBullet
     #endregion
 
     #region I_BULLET_METHODS
-    public void Travel() => transform.position += transform.forward * Time.deltaTime * Speed;
+    public void Travel(Vector2 direction)
+    {
+        Vector3 movement = direction;
+        transform.position +=  movement * Time.deltaTime * Speed;
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -38,11 +45,18 @@ public class Bullet : MonoBehaviour, IBullet
     #endregion
 
     #region UNITY_EVENTS
-    private void Start() { }
+
+    private void Start()
+    {
+        _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        _mousePos = _mainCam.ScreenToWorldPoint(Input.mousePosition);
+        
+    }
 
     private void Update()
     {
-        Travel();
+        Vector3 direction = _mousePos - transform.position;
+        Travel(direction);
 
         _lifetime -= Time.deltaTime;
         if (_lifetime <= 0) Destroy(gameObject);
