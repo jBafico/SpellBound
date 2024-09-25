@@ -11,11 +11,14 @@ using UnityEngine;
 
         #endregion
 
-        private void OnTriggerEnter(Collider collider)
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            IDamageable damageable = collider.GetComponent<IDamageable>();
-            damageable?.LifeRecover(_healAmount);
-            
-            Destroy(gameObject);
+            if (GameObject.FindWithTag("Player") == collider.gameObject)
+            {
+                IDamageable damageable = collider.GetComponent<IDamageable>();
+                damageable?.LifeRecover(_healAmount);
+
+                Destroy(gameObject);
+            }
         }
     }
