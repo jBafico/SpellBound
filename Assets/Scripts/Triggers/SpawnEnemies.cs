@@ -15,10 +15,14 @@ public class SpawnEnemies : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        foreach (var spawnPoint in _spawnPoints)
+        if (GameObject.FindWithTag("Player") == other.gameObject)
         {
-            Instantiate(EnemyPrefab, spawnPoint.GetComponent<Transform>().position, Quaternion.identity);
+            foreach (var spawnPoint in _spawnPoints)
+            {
+                Instantiate(EnemyPrefab, spawnPoint.GetComponent<Transform>().position, Quaternion.identity);
+            }
+
+            Destroy(this);
         }
-        Destroy(this);
     }
 }
