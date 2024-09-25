@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     //For enemy movement towards players
     public float minDist = 1f;
     public Transform target;
+    
+    public float Damage => _damage;
+    [SerializeField] private float _damage = 20;
     #endregion
     
     #region PROPERTIES
@@ -47,6 +50,18 @@ public class Enemy : MonoBehaviour
         //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
         if(distance > minDist)	
             _movementLogic.MoveTowards(target.position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Si el enemigo collisiona con el Player
+        if (GameObject.FindWithTag("Player") == collision.gameObject)
+        {
+            // Detectar componente o estrategia de vida y sacar daño.
+            IDamageable damageable= collision.gameObject.GetComponent<IDamageable>();
+            damageable?.TakeDamage(_damage);
+        }
+        
     }
 
     #region PRIVATE_METHODS

@@ -9,7 +9,7 @@ public interface IBullet
     float LifeTime { get; }
     void Travel();
 
-    void OnCollisionEnter(Collision collision);
+    void OnCollisionEnter2D(Collision2D collision);
 
     void SetOwner(Gun owner);
 }

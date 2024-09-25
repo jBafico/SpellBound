@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour, IBullet
     #region I_BULLET_METHODS
     public void Travel() => transform.position += transform.forward * Time.deltaTime * Speed;
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         // Detectar componente o estrategia de vida y sacar daño.
         IDamageable damageable= collision.gameObject.GetComponent<IDamageable>();
