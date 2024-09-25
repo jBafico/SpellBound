@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿// Agregamos un componente obligatorio -> Esto fueza a que unity agregue 
+// el componente si no existe en el objeto.
+
 using UnityEngine;
 
-// Agregamos un componente obligatorio -> Esto fueza a que unity agregue 
-// el componente si no existe en el objeto.
 [RequireComponent(typeof(AudioSource))]
-public class SoundEffectController : MonoBehaviour, IListenable
+public class DamageSoundEffectController : MonoBehaviour, IListenable
 {
     #region IListenable_Properties
-    // El audio quedará asignado por inspector
+    // El audio quedarÃ¡ asignado por inspector
     public AudioClip AudioClip => _audioClip;
     /// SerializeField nos permite exponer una propiedad privada en el inspector
     [SerializeField] private AudioClip _audioClip;
@@ -29,10 +28,10 @@ public class SoundEffectController : MonoBehaviour, IListenable
     // Reproducir de esta manera evita tener que asignar un clip al source
     public void PlayOnShot() => AudioSource.PlayOneShot(AudioClip);
 
-    // Esta reproducción necesita tener que asignar un clip al source
+    // Esta reproducciÃ³n necesita tener que asignar un clip al source
     public void Play() => AudioSource.Play();
 
-    // Detiene un clip si esta asignado y en reproducción
+    // Detiene un clip si esta asignado y en reproducciÃ³n
     public void Stop() => AudioSource.Stop();
     #endregion
 
