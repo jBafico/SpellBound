@@ -1,21 +1,27 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IBullet
 {
     #region PRIVATE_PROPERTIES
-    [SerializeField] private float _speed = 40;
+    [SerializeField] private float _speed = 10;
     [SerializeField] private float _lifetime = 2;
 
     [SerializeField] private Gun _owner;
 
     private Vector3 _mousePos;
     private Camera _mainCam;
+    private Rigidbody2D _rb;
+    private float _force = 5;
+    
     #endregion
 
     #region I_BULLET_PROPERTIES
     public float Speed => _speed;
     public float LifeTime => _lifetime;
     public Gun Owner => _owner;
+
+    public float force => _force;
     #endregion
 
     #region I_BULLET_METHODS
@@ -27,10 +33,14 @@ public class Bullet : MonoBehaviour, IBullet
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        // Detectar componente o estrategia de vida y sacar daño.
-        IDamageable damageable= collision.gameObject.GetComponent<IDamageable>();
-        damageable?.TakeDamage(Owner.Damage);
-        
+        //Si la bala no collisiona con el Player
+        if (GameObject.FindWithTag("Player") != collision.gameObject)
+        {
+            // Detectar componente o estrategia de vida y sacar daño.
+            IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+            damageable?.TakeDamage(Owner.Damage);
+        }
+
         //Tambien le podemos agregar a varios tipos de daño
         
         //Por utlimo lo destruimos
@@ -50,14 +60,18 @@ public class Bullet : MonoBehaviour, IBullet
     {
         _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _mousePos = _mainCam.ScreenToWorldPoint(Input.mousePosition);
-        
+        _rb = GetComponent<Rigidbody2D>();
+        Vector3 direction = _mousePos - transform.position;
+        Vector3 rotation = transform.position - _mousePos;
+        _rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+
     }
 
     private void Update()
     {
-        Vector3 direction = _mousePos - transform.position;
-        Travel(direction);
-
+        
         _lifetime -= Time.deltaTime;
         if (_lifetime <= 0) Destroy(gameObject);
     }
