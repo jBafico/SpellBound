@@ -9,6 +9,6 @@ public interface IGun
     int MaxBulletCount { get; }
     
     int CurrentBulletCount { get; }
-    void Attack(Vector3 mousePos);
+    void Attack();
     void Reload();
 }

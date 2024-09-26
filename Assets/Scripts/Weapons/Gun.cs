@@ -21,14 +21,29 @@ public class Gun : MonoBehaviour, IGun
     public GameObject BulletPrefab => _bulletPrefab;
     #endregion
 
+    #region VISUAL_PROPERTIES
+
+    private Camera _mainCam;
+    private Vector3 _mousePos;
+    #endregion
+
     #region I_GUN_METHODS
 
     private void Start()
     {
+        _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Reload();
     }
 
-    public virtual void Attack(Vector3 mousePos) => Debug.LogWarning("Implement attack Method");
+    private void Update()
+    {
+        _mousePos = _mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 rotation = _mousePos - transform.position;
+        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation= Quaternion.Euler(0,0,rotZ);
+    }
+
+    public virtual void Attack() => Debug.LogWarning("Implement attack Method");
 
     public virtual void Reload() => _currentBulletCount = _maxBulletCount;
 

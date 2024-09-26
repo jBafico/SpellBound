@@ -6,13 +6,10 @@ public class Shotgun : Gun
 {
     [SerializeField] private int _shotCount = 5;
 
-    public override void Attack(Vector3 mousePos)
+    public override void Attack()
     {
         if (CurrentBulletCount > 0)
         {
-            Vector3 rotation = mousePos - transform.position;
-            float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-            transform.rotation= Quaternion.Euler(0,0,rotZ);
             for (int i = 0; i < _shotCount; i++)
             {
                 GameObject bullet = Instantiate(

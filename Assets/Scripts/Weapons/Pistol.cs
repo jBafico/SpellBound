@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
-    public override void Attack(Vector3 mousePos)
+    public override void Attack()
     {
         if (CurrentBulletCount > 0)
         {
-            Vector3 rotation = mousePos - transform.position;
-            float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-            transform.rotation= Quaternion.Euler(0,0,rotZ);
-            
             GameObject bullet = Instantiate(
                 BulletPrefab, 
                 transform.position, 
