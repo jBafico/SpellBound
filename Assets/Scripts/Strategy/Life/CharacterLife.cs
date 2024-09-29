@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -28,6 +29,14 @@ using UnityEngine;
         public void Die()
         {
             Destroy(gameObject);
+            if (GameObject.FindGameObjectWithTag("Player") == gameObject)
+            {
+                EventsManager.Instance.EventGameOver(false);
+            }
+            else if(GameObject.FindGameObjectWithTag("Boss")== gameObject)
+            {
+                EventsManager.Instance.EventGameOver(true);
+            }
         }
 
         public void LifeRecover(float amount)

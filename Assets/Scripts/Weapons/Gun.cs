@@ -23,8 +23,8 @@ public class Gun : MonoBehaviour, IGun
 
     #region VISUAL_PROPERTIES
 
-    private Camera _mainCam;
-    private Vector3 _mousePos;
+    public Camera _mainCam;
+    public Vector3 _mousePos;
     #endregion
 
     #region I_GUN_METHODS
