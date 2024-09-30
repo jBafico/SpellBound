@@ -48,7 +48,7 @@ using UnityEngine;
         public void TakeDamage(float damage)
         {
             _currentLife -= damage;
-            _damageSoundEffect.PlayOnShot();
+            _damageSoundEffect.Play();
             if(_currentLife<=0) Die();
         }
 

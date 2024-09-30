@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
+    [SerializeField] private SoundEffectController _soundEffect;
     public override void Attack()
     {
         if (CurrentBulletCount > 0)
@@ -14,6 +15,7 @@ public class Pistol : Gun
                 Quaternion.identity);
             //Seteamos el owner de la bala
             bullet.GetComponent<IBullet>().SetOwner(this);
+            _soundEffect.Play();
             UpdateBulletCount();
         }
         
