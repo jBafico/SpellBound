@@ -12,10 +12,15 @@ public class Character : MonoBehaviour
 
     #region PROPERTIES
 
+    // Movement Strategies
     private CharacterWalk _characterWalk;
     private CharacterRun _characterRun;
-    private IMoveable _movementLogic;
-    private CharacterJump _characterJump;
+    
+    // Commands
+    private CmdMove _cmdMoveUp;
+    private CmdMove _cmdMoveDown;
+    private CmdMove _cmdMoveRight;
+    private CmdMove _cmdMoveLeft;
     
     [SerializeField] private List<GameObject> _guns;
     private IGun _currentGun;
@@ -46,27 +51,30 @@ public class Character : MonoBehaviour
 
         _characterWalk = GetComponent<CharacterWalk>();
         _characterRun = GetComponent<CharacterRun>();
-
-        _movementLogic = _characterWalk;
-
-        _characterJump = GetComponent<CharacterJump>();
-
-        //TODO Decidir que arma iniciar
+        
+        UpdateMovementCommand(_characterWalk);
+        
         GunSelection(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /* Movimento */
+        /* Movimento 
         if (Input.GetKey(_moveForward)) _movementLogic.Move(Vector2.up);
         if (Input.GetKey(_moveBack)) _movementLogic.Move(-Vector2.up);
         if (Input.GetKey(_moveRight)) _movementLogic.Move(Vector2.right);
         if (Input.GetKey(_moveLeft)) _movementLogic.Move(-Vector2.right);
+        */
+        
+        if (Input.GetKey(_moveForward)) _cmdMoveUp.Do();
+        if (Input.GetKey(_moveBack)) _cmdMoveDown.Do();
+        if (Input.GetKey(_moveRight)) _cmdMoveRight.Do();
+        if (Input.GetKey(_moveLeft)) _cmdMoveLeft.Do();
         
         /* Correr/Caminar */
-        if (Input.GetKeyDown(_walkRun)) _movementLogic= _characterRun;
-        if (Input.GetKeyUp(_walkRun)) _movementLogic= _characterWalk;
+        if (Input.GetKeyDown(_walkRun)) UpdateMovementCommand(_characterRun);;
+        if (Input.GetKeyUp(_walkRun)) UpdateMovementCommand(_characterWalk);;
         
         
         /* Armas */
@@ -105,6 +113,14 @@ public class Character : MonoBehaviour
         
         _guns[index].SetActive(true);
         _currentGun = _guns[index].GetComponent<IGun>();
+    }
+
+    private void UpdateMovementCommand(IMoveable moveable)
+    {
+          _cmdMoveUp = new CmdMove(moveable, Vector2.up);
+          _cmdMoveDown = new CmdMove(moveable, -Vector2.up);
+          _cmdMoveRight = new CmdMove(moveable, Vector2.right);
+          _cmdMoveLeft = new CmdMove(moveable, -Vector2.right);
     }
     
 
