@@ -24,6 +24,9 @@ public class EventsManager : MonoBehaviour
 
         public event Action OnBossBeat;
 
+        //Intensity, timer
+        public event Action<float, float> OnTakingDamage;
+
         public void EventGameOver(bool isVictory)
         {
                 if (OnGameOver != null) OnGameOver(isVictory);
@@ -32,6 +35,11 @@ public class EventsManager : MonoBehaviour
         public void EventBossBeat()
         {
                 if (OnBossBeat != null) OnBossBeat();
+        }
+
+        public void EventTakingDamage(float intensity, float timer)
+        {
+                if (OnTakingDamage != null) OnTakingDamage(intensity, timer);
         }
 
         #endregion

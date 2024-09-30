@@ -49,6 +49,7 @@ using UnityEngine;
         {
             _currentLife -= damage;
             _damageSoundEffect.Play();
+            if(GameObject.FindGameObjectWithTag("Player") == gameObject) EventsManager.Instance.EventTakingDamage(5f,0.5f);
             if(_currentLife<=0) Die();
         }
 
