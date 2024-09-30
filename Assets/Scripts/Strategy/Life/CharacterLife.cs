@@ -12,7 +12,7 @@ using UnityEngine;
         
         [SerializeField] private float _maxLife = 100;
         [SerializeField] private float _currentLife;
-
+        [SerializeField] private DamageSoundEffectController _damageSoundEffect;
         #endregion
 
         #region UNITY_EVENTS
@@ -48,6 +48,7 @@ using UnityEngine;
         public void TakeDamage(float damage)
         {
             _currentLife -= damage;
+            _damageSoundEffect.PlayOnShot();
             if(_currentLife<=0) Die();
         }
 
