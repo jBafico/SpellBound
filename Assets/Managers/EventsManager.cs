@@ -22,9 +22,16 @@ public class EventsManager : MonoBehaviour
         //Se puede hacer la action sin tipo
         public event Action<bool> OnGameOver;
 
+        public event Action OnBossBeat;
+
         public void EventGameOver(bool isVictory)
         {
                 if (OnGameOver != null) OnGameOver(isVictory);
+        }
+
+        public void EventBossBeat()
+        {
+                if (OnBossBeat != null) OnBossBeat();
         }
 
         #endregion

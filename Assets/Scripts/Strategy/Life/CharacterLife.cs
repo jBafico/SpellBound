@@ -35,7 +35,7 @@ using UnityEngine;
             }
             else if(GameObject.FindGameObjectWithTag("Boss")== gameObject)
             {
-                EventsManager.Instance.EventGameOver(true);
+                EventsManager.Instance.EventBossBeat();
             }
         }
 
