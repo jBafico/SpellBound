@@ -61,16 +61,15 @@ public class Character : MonoBehaviour
     void Update()
     {
         /* Movimento 
-        if (Input.GetKey(_moveForward)) _movementLogic.Move(Vector2.up);
-        if (Input.GetKey(_moveBack)) _movementLogic.Move(-Vector2.up);
-        if (Input.GetKey(_moveRight)) _movementLogic.Move(Vector2.right);
-        if (Input.GetKey(_moveLeft)) _movementLogic.Move(-Vector2.right);
-        */
-        
         if (Input.GetKey(_moveForward)) _cmdMoveUp.Do();
         if (Input.GetKey(_moveBack)) _cmdMoveDown.Do();
         if (Input.GetKey(_moveRight)) _cmdMoveRight.Do();
         if (Input.GetKey(_moveLeft)) _cmdMoveLeft.Do();
+         */
+        if (Input.GetKey(_moveForward)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveUp);
+        if (Input.GetKey(_moveBack)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveDown);;
+        if (Input.GetKey(_moveRight)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveRight);;
+        if (Input.GetKey(_moveLeft)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveLeft);;
         
         /* Correr/Caminar */
         if (Input.GetKeyDown(_walkRun)) UpdateMovementCommand(_characterRun);;

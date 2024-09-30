@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CmdApplyDamage : MonoBehaviour
+public class CmdApplyDamage : ICommand
 {
-    // Start is called before the first frame update
-    void Start()
+    private IDamageable _damageable;
+    private float _amount;
+
+    public CmdApplyDamage(IDamageable damageable, float amount)
     {
-        
+        _damageable = damageable;
+        _amount = amount;
     }
 
-    // Update is called once per frame
-    void Update()
+    #region ICOMMAND_METHODS
+
+    public void Do()
     {
-        
+        _damageable.TakeDamage(_amount);
     }
+
+    #endregion
 }
