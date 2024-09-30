@@ -17,6 +17,7 @@ public class GameOverSoundController : MonoBehaviour
         private void Start()
         {
             _audioSource = GetComponent<AudioSource>();
+            EventsManager.Instance.OnGameOver += OnGameOver;
         }
 
         #endregion
@@ -29,4 +30,6 @@ public class GameOverSoundController : MonoBehaviour
         }
 
         #endregion
+        
+        
     }
