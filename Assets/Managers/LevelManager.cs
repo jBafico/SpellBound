@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         EventsManager.Instance.OnBossBeat += OnBossBeat;
-        EventsManager.Instance.onTutorialFinished += OnTutorialFinished;
+        EventsManager.Instance.OnTutorialFinished += OnTutorialFinished;
     }
 
     #endregion
