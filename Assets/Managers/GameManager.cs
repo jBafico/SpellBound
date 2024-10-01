@@ -41,10 +41,11 @@ public class GameManager : MonoBehaviour
         {
                 _isGameOver = true;
                 //Aca tengo que frenar todo
+                Time.timeScale = 0;
                 _isVictory = isVictory;
                 
                 //Preparar el mensaje de texto
-                _gameOverMessage.text = isVictory ? "VICTORY!!!\n PRESS ESC TO GO TO MENU" : "DEFEAT\n PRESS ESC TO GO TO MENU";
+                _gameOverMessage.text = isVictory ? "VICTORY!\n PRESS ESC TO GO TO MENU" : "DEFEAT\n PRESS ESC TO GO TO MENU";
                 _gameOverMessage.color = isVictory ? Color.green : Color.red;
         }
 
