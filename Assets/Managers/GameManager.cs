@@ -1,11 +1,13 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
         #region GAME_MANAGER_PROPERTIES
 
+        private const string MENU_SCENE = "Menu";
         [SerializeField] private bool _isGameOver = false; //si termino el juego
         [SerializeField] private bool _isVictory = false; //si se obtuvo victoria
         [SerializeField] private TMP_Text _gameOverMessage;
@@ -23,6 +25,14 @@ public class GameManager : MonoBehaviour
                 EventsManager.Instance.OnGameOver += OnGameOver;
         }
 
+        private void Update()
+        {
+                if (_isGameOver && Input.GetKey(KeyCode.Escape))
+                {
+                        SceneManager.LoadScene(MENU_SCENE);
+                }
+        }
+
         #endregion
 
         #region GAME_MANAGER_METHODS
@@ -34,7 +44,7 @@ public class GameManager : MonoBehaviour
                 _isVictory = isVictory;
                 
                 //Preparar el mensaje de texto
-                _gameOverMessage.text = isVictory ? "¡¡¡VICTORY!!!" : "DEFEAT :(";
+                _gameOverMessage.text = isVictory ? "VICTORY!!!\n PRESS ESC TO GO TO MENU" : "DEFEAT\n PRESS ESC TO GO TO MENU";
                 _gameOverMessage.color = isVictory ? Color.green : Color.red;
         }
 
