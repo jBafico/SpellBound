@@ -27,6 +27,8 @@ public class EventsManager : MonoBehaviour
         //Intensity, timer
         public event Action<float, float> OnTakingDamage;
 
+        public event Action onTutorialFinished;
+
         public void EventGameOver(bool isVictory)
         {
                 if (OnGameOver != null) OnGameOver(isVictory);
@@ -40,6 +42,11 @@ public class EventsManager : MonoBehaviour
         public void EventTakingDamage(float intensity, float timer)
         {
                 if (OnTakingDamage != null) OnTakingDamage(intensity, timer);
+        }
+
+        public void EventTutorialFinished()
+        {
+                if (onTutorialFinished != null) onTutorialFinished();
         }
 
         #endregion

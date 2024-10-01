@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         EventsManager.Instance.OnBossBeat += OnBossBeat;
+        EventsManager.Instance.onTutorialFinished += OnTutorialFinished;
     }
 
     #endregion
@@ -18,6 +19,11 @@ public class LevelManager : MonoBehaviour
     {
         GameObject door = GameObject.FindGameObjectWithTag("Door").gameObject;
         Destroy(door);
+    }
+
+    private void OnTutorialFinished()
+    {
+        Destroy(GameObject.FindWithTag("Tutorial"));
     }
 
     #endregion

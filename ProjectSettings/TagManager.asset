@@ -9,6 +9,7 @@ TagManager:
   - Boss
   - Ladder
   - Door
+  - Tutorial
   layers:
   - Default
   - TransparentFX

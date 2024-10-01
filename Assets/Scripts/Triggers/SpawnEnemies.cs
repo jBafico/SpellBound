@@ -17,6 +17,11 @@ public class SpawnEnemies : MonoBehaviour
     {
         if (GameObject.FindWithTag("Player") == other.gameObject)
         {
+            GameObject tutorialObject = GameObject.FindWithTag("Tutorial");
+            if (tutorialObject != null && tutorialObject.activeInHierarchy)
+            {
+                EventsManager.Instance.EventTutorialFinished();
+            }
             foreach (var spawnPoint in _spawnPoints)
             {
                 Instantiate(EnemyPrefab, spawnPoint.GetComponent<Transform>().position, Quaternion.identity);
