@@ -5,6 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject _medkit;
     [SerializeField] private GameObject _destroyedCrate;
+    [SerializeField] private GameObject _door;
     
     #region UNITY_METHODS
 
@@ -21,8 +22,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnBossBeat()
     {
-        GameObject door = GameObject.FindGameObjectWithTag("Door").gameObject;
-        Destroy(door);
+        Destroy(_door);
     }
 
     private void OnTutorialFinished()

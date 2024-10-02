@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Si el enemigo collisiona con el Player
-        if (GameObject.FindWithTag("Player") == collision.gameObject)
+        if (collision.gameObject.CompareTag("Player"))
         {
             // Detectar componente o estrategia de vida y sacar daño.
             IDamageable damageable= collision.gameObject.GetComponent<IDamageable>();

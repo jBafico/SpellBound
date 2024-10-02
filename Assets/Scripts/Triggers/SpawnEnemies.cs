@@ -15,7 +15,7 @@ public class SpawnEnemies : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (GameObject.FindWithTag("Player") == other.gameObject)
+        if (other.gameObject.CompareTag("Player"))
         {
             GameObject tutorialObject = GameObject.FindWithTag("Tutorial");
             if (tutorialObject != null && tutorialObject.activeInHierarchy)

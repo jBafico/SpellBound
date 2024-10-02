@@ -1468,6 +1468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _medkit: {fileID: 4445931406545263140, guid: eb4a91230322d634695e0d7a2368e6d3, type: 3}
   _destroyedCrate: {fileID: 2544333531685309131, guid: dfc95e4a1a28fd64b8b072599e1e123c, type: 3}
+  _door: {fileID: 1773594099}
 --- !u!114 &1771470615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,6 +1547,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67e7b11f31a9e7849a6ff65f3631a307, type: 3}
+--- !u!1 &1773594099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6266075909942244356, guid: 67e7b11f31a9e7849a6ff65f3631a307, type: 3}
+  m_PrefabInstance: {fileID: 1773594098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1780227018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5059152143135774279, guid: e6a40696608e7b84ea9fe380d3bc64c5, type: 3}

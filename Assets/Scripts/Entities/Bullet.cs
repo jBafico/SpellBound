@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour, IBullet
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //Si la bala no collisiona con el Player
-        if (GameObject.FindWithTag("Player") != collision.gameObject)
+        if (!collision.gameObject.CompareTag("Player"))
         {
             // Detectar componente o estrategia de vida y sacar daño.
             IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();

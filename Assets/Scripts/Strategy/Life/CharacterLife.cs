@@ -33,11 +33,11 @@ using UnityEngine;
                 EventsManager.Instance.EventCrateDestroyed(gameObject);
             }
             Destroy(gameObject);
-            if (GameObject.FindGameObjectWithTag("Player") == gameObject)
+            if (gameObject.CompareTag("Player"))
             {
                 EventsManager.Instance.EventGameOver(false);
             }
-            else if(GameObject.FindGameObjectWithTag("Boss")== gameObject)
+            else if(gameObject.CompareTag("Boss"))
             {
                 EventsManager.Instance.EventBossBeat();
             }
@@ -53,7 +53,7 @@ using UnityEngine;
         {
             _currentLife -= damage;
             _damageSoundEffect.Play();
-            if(GameObject.FindGameObjectWithTag("Player") == gameObject) EventsManager.Instance.EventTakingDamage(5f,0.5f);
+            if(gameObject.CompareTag("Player")) EventsManager.Instance.EventTakingDamage(5f,0.5f);
             if(_currentLife<=0) Die();
         }
 

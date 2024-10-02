@@ -13,7 +13,7 @@ using UnityEngine;
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (GameObject.FindWithTag("Player") == collider.gameObject)
+            if (collider.gameObject.CompareTag("Player"))
             {
                 IDamageable damageable = collider.GetComponent<IDamageable>();
                 damageable?.LifeRecover(_healAmount);
