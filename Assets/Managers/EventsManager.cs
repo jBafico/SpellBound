@@ -29,6 +29,8 @@ public class EventsManager : MonoBehaviour
 
         public event Action OnTutorialFinished;
 
+        public event Action<GameObject> OnCrateDestroyed;
+
         public void EventGameOver(bool isVictory)
         {
                 if (OnGameOver != null) OnGameOver(isVictory);
@@ -47,6 +49,11 @@ public class EventsManager : MonoBehaviour
         public void EventTutorialFinished()
         {
                 if (OnTutorialFinished != null) OnTutorialFinished();
+        }
+
+        public void EventCrateDestroyed(GameObject crate)
+        {
+                if (OnCrateDestroyed != null) OnCrateDestroyed(crate);
         }
 
         #endregion

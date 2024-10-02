@@ -28,6 +28,10 @@ using UnityEngine;
 
         public void Die()
         {
+            if (gameObject.CompareTag("Box"))
+            {
+                EventsManager.Instance.EventCrateDestroyed(gameObject);
+            }
             Destroy(gameObject);
             if (GameObject.FindGameObjectWithTag("Player") == gameObject)
             {
