@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     #region CONSTANT_PROPERTIES
     
-    private string CRAWL_MOVEMENT_STRATEGY = "CharacterCrawl";
+    private string CRAWL_MOVEMENT_STRATEGY = "EntityCrawl";
     
     //For enemy movement towards players
     public float minDist = 1f;
@@ -16,8 +16,11 @@ public class Enemy : MonoBehaviour
     #endregion
     
     #region PROPERTIES
+    
+    public CharacterStats CharacterStats => _characterStats;
+    [SerializeField] private CharacterStats _characterStats;
 
-    private CharacterCrawl _characterCrawl;
+    private EntityCrawl _characterCrawl;
     private IMoveable _movementLogic;
     
     #endregion
@@ -26,7 +29,7 @@ public class Enemy : MonoBehaviour
     {
         AddDynamicComponent(CRAWL_MOVEMENT_STRATEGY);
         
-        _characterCrawl = GetComponent<CharacterCrawl>();
+        _characterCrawl = GetComponent<EntityCrawl>();
         _movementLogic = _characterCrawl;
         
         // if no target specified, assume the player

@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Shotgun : Gun
 {
-    [SerializeField] private int _shotCount = 5;
 
     public override void Attack()
     {
         if (CurrentBulletCount > 0)
         {
-            for (int i = 0; i < _shotCount; i++)
+            for (int i = 0; i < GunStats.ShotCount; i++)
             {
                 GameObject bullet = Instantiate(
                     BulletPrefab,

@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class CharacterCrawl : MonoBehaviour, IMoveable
+public class EntityWalk : MonoBehaviour, IMoveable
 {
     #region IMOVABLE_PROPERTIES
 
-    public float Speed => GetComponent<Character>().CharacterStats.MoveSpeed/2;
+    public float Speed => GetComponent<Enemy>().CharacterStats.MoveSpeed;
         
 
     #endregion

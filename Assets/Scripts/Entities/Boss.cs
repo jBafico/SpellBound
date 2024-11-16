@@ -8,6 +8,9 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private List<GameObject> _guns;
     private IGun _currentGun;
+    
+    public CharacterStats CharacterStats => _characterStats;
+    [SerializeField] private CharacterStats _characterStats;
 
     #endregion
 

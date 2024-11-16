@@ -27,6 +27,8 @@ public class Character : MonoBehaviour
 
     #endregion
 
+    public CharacterStats CharacterStats => _characterStats;
+    [SerializeField] private CharacterStats _characterStats;
     
 
     // BINDING ATTACK KEYS

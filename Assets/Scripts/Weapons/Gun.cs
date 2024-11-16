@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour, IGun
 {
+    public GunStats GunStats => _gunStats;
+    [SerializeField] private GunStats _gunStats;
+    
     #region GUN_PROPERTIES
-    private int _damage = 10;
-    private int _maxBulletCount = 10;
     [SerializeField] private int _currentBulletCount;
-    [SerializeField] private GameObject _bulletPrefab;
     
     #endregion
 
     #region I_GUN_PROPERTIES
-    public int Damage => _damage;
-    public int MaxBulletCount => _maxBulletCount;
+    public int Damage => GunStats.Damage;
+    public int MaxBulletCount => GunStats.MaxBullets;
 
     public int CurrentBulletCount => _currentBulletCount;
-    public GameObject BulletPrefab => _bulletPrefab;
+    public GameObject BulletPrefab => GunStats.BulletPrefab;
     #endregion
 
     #region VISUAL_PROPERTIES
@@ -45,7 +45,7 @@ public class Gun : MonoBehaviour, IGun
 
     public virtual void Attack() => Debug.LogWarning("Implement attack Method");
 
-    public virtual void Reload() => _currentBulletCount = _maxBulletCount;
+    public virtual void Reload() => _currentBulletCount = MaxBulletCount;
 
     protected void UpdateBulletCount()
     {

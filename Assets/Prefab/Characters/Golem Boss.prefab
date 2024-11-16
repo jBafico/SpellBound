@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4222913378578115152}
   - component: {fileID: -5332170260601249929}
   - component: {fileID: 4530214755528844579}
-  - component: {fileID: 955801089407623375}
   - component: {fileID: 8883823665993138125}
   - component: {fileID: 474153925525440803}
   - component: {fileID: 526975422087327216}
+  - component: {fileID: 3907082672366038778}
   m_Layer: 10
   m_Name: Golem Boss
   m_TagString: Boss
@@ -101,21 +101,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.14356661}
   serializedVersion: 2
   m_Radius: 1.3867376
---- !u!114 &955801089407623375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129293662740663450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87c6ce32aa24b92a426d7c3b1694827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxLife: 500
-  _currentLife: 0
-  _damageSoundEffect: {fileID: 474153925525440803}
 --- !u!114 &8883823665993138125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _guns:
   - {fileID: 6544807500437732295, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
+  _characterStats: {fileID: 11400000, guid: 52aa635ac77b73845ae98480e37f2306, type: 2}
 --- !u!114 &474153925525440803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +225,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3907082672366038778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129293662740663450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e850fe3dff524f00afddc8079a2b3261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentLife: 0
+  _damageSoundEffect: {fileID: 474153925525440803}
 --- !u!1 &7768026169197631044
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4222913378578115152}
     m_Modifications:
+    - target: {fileID: 5278518216566663635, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
+      propertyPath: _gunStats
+      value: 
+      objectReference: {fileID: 11400000, guid: fcfe59e3e325467468aff285247a9c6f, type: 2}
     - target: {fileID: 5894279850236881121, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

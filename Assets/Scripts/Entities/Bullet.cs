@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour, IBullet
         {
             // Detectar componente o estrategia de vida y sacar daño.
             IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
-            damageable?.TakeDamage(Owner.Damage);
+            damageable?.TakeDamage(Owner.GunStats.Damage);
         }
 
         //Tambien le podemos agregar a varios tipos de daño

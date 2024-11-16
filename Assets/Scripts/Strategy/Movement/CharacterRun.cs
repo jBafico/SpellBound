@@ -7,9 +7,8 @@ using UnityEngine;
     {
         #region IMOVABLE_PROPERTIES
 
-        public float Speed => _speed;
-
-        [SerializeField] private float _speed = 20;
+        public float Speed => GetComponent<Character>().CharacterStats.MoveSpeed * 2;
+        
         
 
         #endregion

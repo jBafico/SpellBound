@@ -3,7 +3,6 @@
 public class BossGun : Gun
 {
     #region GUN_PROPERTIES
-    [SerializeField] private int _shotCount = 2;
     private int ticks = 500;
     #endregion
 
@@ -29,7 +28,7 @@ public class BossGun : Gun
     public void Attack()
     {
         
-            for (int i = 0; i < _shotCount; i++)
+            for (int i = 0; i < GunStats.ShotCount; i++)
             {
                 GameObject bullet = Instantiate(
                     BulletPrefab,

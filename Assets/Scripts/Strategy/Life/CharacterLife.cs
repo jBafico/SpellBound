@@ -7,10 +7,10 @@ using UnityEngine;
     {
         #region IDAMAGEABLE_PROPERTIES
 
-        public float MaxLife => _maxLife;
+        public float MaxLife => GetComponent<Character>().CharacterStats.MaxLife;
         public float CurrentLife => _currentLife;
         
-        [SerializeField] private float _maxLife = 100;
+        
         [SerializeField] private float _currentLife;
         [SerializeField] private DamageSoundEffectController _damageSoundEffect;
         #endregion
@@ -19,7 +19,7 @@ using UnityEngine;
 
         private void Start()
         {
-            _currentLife = _maxLife;
+            _currentLife = MaxLife;
         }
 
         #endregion
@@ -28,25 +28,17 @@ using UnityEngine;
 
         public void Die()
         {
-            if (gameObject.CompareTag("Box"))
-            {
-                EventsManager.Instance.EventCrateDestroyed(gameObject);
-            }
             Destroy(gameObject);
             if (gameObject.CompareTag("Player"))
             {
                 EventsManager.Instance.EventGameOver(false);
-            }
-            else if(gameObject.CompareTag("Boss"))
-            {
-                EventsManager.Instance.EventBossBeat();
             }
         }
 
         public void LifeRecover(float amount)
         {
             _currentLife += amount;
-            if (_currentLife > _maxLife) _currentLife = _maxLife;
+            if (_currentLife > MaxLife) _currentLife = MaxLife;
         }
 
         public void TakeDamage(float damage)

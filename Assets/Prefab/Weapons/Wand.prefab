@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdf51e2b0f33b8439a323cf67e614e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gunStats: {fileID: 11400000, guid: 4ddfcfe31ec6d75488c07abc82c14432, type: 2}
   _currentBulletCount: 4
-  _bulletPrefab: {fileID: 594292529811568574, guid: 98541973dee5a9e4092c44e4732db945, type: 3}
   _mainCam: {fileID: 0}
   _mousePos: {x: 0, y: 0, z: 0}
   _soundEffect: {fileID: 517531911772023866}

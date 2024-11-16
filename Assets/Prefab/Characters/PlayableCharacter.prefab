@@ -208,6 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _guns:
   - {fileID: 4571744588482120867, guid: 5a68e7f163701764097f72089f30e30f, type: 3}
+  CharacterStats: {fileID: 11400000, guid: 5e38b89e3c57d504e8bed6c08ca67d92, type: 2}
+  _characterStats: {fileID: 11400000, guid: 5e38b89e3c57d504e8bed6c08ca67d92, type: 2}
   _shoot: 323
   _reload: 114
   _selectGun1: 49
@@ -229,7 +231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c6ce32aa24b92a426d7c3b1694827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 100
   _currentLife: 100
   _damageSoundEffect: {fileID: 481163082070296575}
 --- !u!82 &2751122403565352634
