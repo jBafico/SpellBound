@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 3000538690294318593}
   - component: {fileID: 7314431975578075574}
   - component: {fileID: 5084822070900456907}
-  - component: {fileID: 5948020822570077873}
   - component: {fileID: 8645252931038064778}
   - component: {fileID: 3054138292658247810}
+  - component: {fileID: 6051508782219948416}
   m_Layer: 0
   m_Name: Box
   m_TagString: Box
@@ -193,21 +193,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5948020822570077873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442971387342806761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87c6ce32aa24b92a426d7c3b1694827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxLife: 30
-  _currentLife: 0
-  _damageSoundEffect: {fileID: 8645252931038064778}
 --- !u!114 &8645252931038064778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,3 +302,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6051508782219948416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442971387342806761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c600db92cf874f12a8517f6c49d206f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentLife: 30
+  _damageSoundEffect: {fileID: 8645252931038064778}
