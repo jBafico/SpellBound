@@ -1,11 +1,12 @@
 using UnityEngine;
 
 
-public class EntityLife : MonoBehaviour, IDamageable
+public class ObjectLife : MonoBehaviour, IDamageable
 {
     #region IDAMAGEABLE_PROPERTIES
 
-    public float MaxLife => GetComponent<Enemy>().CharacterStats.MaxLife;
+    public float MaxLife => _maxlife;
+    [SerializeField] private float _maxlife = 30;
     public float CurrentLife => _currentLife;
         
         
@@ -26,6 +27,10 @@ public class EntityLife : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        if (gameObject.CompareTag("Box"))
+        {
+            EventsManager.Instance.EventCrateDestroyed(gameObject);
+        }
         Destroy(gameObject);
     }
 
