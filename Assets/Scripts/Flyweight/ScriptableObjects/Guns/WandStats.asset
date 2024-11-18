@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WandStats
   m_EditorClassIdentifier: 
   _gunStats:
-    BulletPrefab: {fileID: 0}
-    Damage: 0
-    MaxBullets: 0
-    ShotCount: 0
+    BulletPrefab: {fileID: 594292529811568574, guid: 98541973dee5a9e4092c44e4732db945, type: 3}
+    Damage: 10
+    MaxBullets: 10
+    ShotCount: 1

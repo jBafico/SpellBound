@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   _stats:
-    MaxLife: 0
-    MoveSpeed: 0
+    MaxLife: 50
+    MoveSpeed: 10

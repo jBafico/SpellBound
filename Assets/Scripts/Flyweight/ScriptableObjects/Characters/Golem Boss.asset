@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Golem Boss
   m_EditorClassIdentifier: 
   _stats:
-    MaxLife: 0
+    MaxLife: 300
     MoveSpeed: 0
