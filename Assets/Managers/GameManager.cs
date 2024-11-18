@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         [SerializeField] private bool _isGameOver = false; //si termino el juego
         [SerializeField] private bool _isVictory = false; //si se obtuvo victoria
         [SerializeField] private TMP_Text _gameOverMessage;
+        [SerializeField] private String _nextLevel;
         
 
         #endregion
@@ -27,9 +28,13 @@ public class GameManager : MonoBehaviour
 
         private void Update()
         {
-                if (_isGameOver && Input.GetKey(KeyCode.Escape))
+                if (_isGameOver && !_isVictory && Input.GetKey(KeyCode.Escape))
                 {
                         SceneManager.LoadScene(MENU_SCENE);
+                }
+                else if (_isGameOver && _isVictory && Input.GetKey(KeyCode.Space))
+                {
+                        SceneManager.LoadScene(_nextLevel);
                 }
         }
 
