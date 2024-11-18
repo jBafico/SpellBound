@@ -54,6 +54,7 @@ public class Gun : MonoBehaviour, IGun
         if (CurrentBulletCount <= 0) _currentBulletCount = 0;
     }
     #endregion
+
     
     
 }

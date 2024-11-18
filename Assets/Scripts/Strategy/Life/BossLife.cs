@@ -7,6 +7,8 @@ public class BossLife : MonoBehaviour, IDamageable
 
     public float MaxLife => GetComponent<Boss>().CharacterStats.MaxLife;
     public float CurrentLife => _currentLife;
+
+    private Animator _animator => GetComponent<Boss>().Animator;
         
         
     [SerializeField] private float _currentLife;
@@ -26,13 +28,14 @@ public class BossLife : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Destroy(gameObject);
-        
+        _animator.SetBool("isDead", true);
+        GetComponent<Boss>().DeactivateGun();
         if(gameObject.CompareTag("Boss"))
         {
             EventsManager.Instance.EventBossBeat();
         }
     }
+    
 
     public void LifeRecover(float amount)
     {

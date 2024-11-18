@@ -28,7 +28,7 @@ public class BossGun : Gun
     public void Attack()
     {
         
-            for (int i = 0; i < GunStats.ShotCount; i++)
+            for (int i = 0; i < GunStats.ShotCount ; i++)
             {
                 GameObject bullet = Instantiate(
                     BulletPrefab,
@@ -38,10 +38,10 @@ public class BossGun : Gun
                 bullet.GetComponent<IBullet>().SetOwner(this);
                 
             }
-            
         
-        
-    } 
+    }
+
+    
     
     #endregion
 }

@@ -113,9 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23bbad3041e4678b76ece6aabfb47a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guns:
-  - {fileID: 6544807500437732295, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
+  _bossGun: {fileID: 8558277182984277246}
   _characterStats: {fileID: 11400000, guid: 52aa635ac77b73845ae98480e37f2306, type: 2}
+  _animator: {fileID: 1632292139102785446}
 --- !u!114 &474153925525440803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +406,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
+--- !u!1 &8558277182984277246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6544807500437732295, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
+  m_PrefabInstance: {fileID: 3176947039237633849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9068692966945611736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5894279850236881121, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}

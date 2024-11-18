@@ -1,39 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
     #region PROPERTIES
-
-    [SerializeField] private List<GameObject> _guns;
+    
     private IGun _currentGun;
+
+    [SerializeField] private GameObject _bossGun;
     
     public CharacterStats CharacterStats => _characterStats;
     [SerializeField] private CharacterStats _characterStats;
 
-    #endregion
-
-    #region UNITY_METHODS
-
-    private void Start()
-    {
-        GunSelection(0);
-    }
+    public Animator Animator => _animator;
+    [SerializeField] private Animator _animator;
 
     #endregion
+    
 
     #region PRIVATE_METHODS
+    
 
-    private void GunSelection(int index)
+    public void DeactivateGun()
     {
-        foreach (var gun in _guns)
-        {
-            gun.SetActive(false);
-        }
-        
-        _guns[index].SetActive(true);
-        _currentGun = _guns[index].GetComponent<IGun>();
+        Destroy(_bossGun);
     }
 
     #endregion
