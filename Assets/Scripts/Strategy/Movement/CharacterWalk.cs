@@ -7,13 +7,14 @@ using UnityEngine;
         #region IMOVABLE_PROPERTIES
 
         public float Speed => GetComponent<Character>().CharacterStats.MoveSpeed;
-        
+        private Animator _animator => GetComponent<Character>().Animator;
 
         #endregion
         
         #region IMOVABLE_METHODS
         public void Move(Vector2 direction)
         {
+            _animator.SetFloat("Speed", 0.2f);
             Vector3 movement = direction;
             transform.position +=  movement * Time.deltaTime * Speed;
         }

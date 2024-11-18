@@ -29,6 +29,9 @@ public class Character : MonoBehaviour
 
     public CharacterStats CharacterStats => _characterStats;
     [SerializeField] private CharacterStats _characterStats;
+
+    public Animator Animator => _animator;
+    [SerializeField] private Animator _animator;
     
 
     // BINDING ATTACK KEYS
@@ -72,11 +75,16 @@ public class Character : MonoBehaviour
         if (Input.GetKey(_moveBack)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveDown);;
         if (Input.GetKey(_moveRight)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveRight);;
         if (Input.GetKey(_moveLeft)) EventQueueManager.Instance.AddCommandToQueue(_cmdMoveLeft);;
+
+        if (!(Input.GetKeyUp(_moveForward) || Input.GetKeyUp(_moveBack) || Input.GetKeyUp(_moveRight) ||
+              Input.GetKeyUp(_moveLeft)))
+        {
+            _animator.SetFloat("Speed", 0f);
+        }
         
         /* Correr/Caminar */
         if (Input.GetKeyDown(_walkRun)) UpdateMovementCommand(_characterRun);;
         if (Input.GetKeyUp(_walkRun)) UpdateMovementCommand(_characterWalk);;
-        
         
         /* Armas */
         if (Input.GetKeyDown(_shoot)) _currentGun.Attack();

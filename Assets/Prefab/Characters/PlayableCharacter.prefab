@@ -231,6 +231,7 @@ MonoBehaviour:
   _guns:
   - {fileID: 4571744588482120867, guid: 5a68e7f163701764097f72089f30e30f, type: 3}
   _characterStats: {fileID: 11400000, guid: 5e38b89e3c57d504e8bed6c08ca67d92, type: 2}
+  _animator: {fileID: 822939462626994477}
   _shoot: 323
   _reload: 114
   _selectGun1: 49
