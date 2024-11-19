@@ -15,6 +15,7 @@ using UnityEngine;
         [SerializeField] private DamageSoundEffectController _damageSoundEffect;
         #endregion
 
+
         #region UNITY_EVENTS
 
         private void Start()
@@ -35,15 +36,22 @@ using UnityEngine;
             }
         }
 
-        public void LifeRecover(float amount)
-        {
+        public void UpdateLife(float amount) {
             _currentLife += amount;
             if (_currentLife > MaxLife) _currentLife = MaxLife;
+            if (_currentLife < 0) _currentLife = 0;
+            EventsManager.Instance.EventLifeUpdate(_currentLife);
+        }
+
+
+        public void LifeRecover(float amount)
+        {
+            UpdateLife(amount);
         }
 
         public void TakeDamage(float damage)
         {
-            _currentLife -= damage;
+            UpdateLife(-damage);
             _damageSoundEffect.Play();
             if(gameObject.CompareTag("Player")) EventsManager.Instance.EventTakingDamage(5f,0.5f);
             if(_currentLife<=0) Die();

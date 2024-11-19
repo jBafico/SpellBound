@@ -17,9 +17,13 @@ public class Pistol : Gun
             bullet.GetComponent<IBullet>().SetOwner(this);
             _soundEffect.Play();
             UpdateBulletCount();
+            EventsManager.Instance.EventManaUpdate(CurrentBulletCount);
         }
         
     }
 
-    public override void Reload() => base.Reload();
+    public override void Reload() {
+        base.Reload();
+        EventsManager.Instance.EventManaUpdate(CurrentBulletCount);
+    }
 }

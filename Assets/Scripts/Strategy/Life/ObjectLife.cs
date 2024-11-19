@@ -12,6 +12,7 @@ public class ObjectLife : MonoBehaviour, IDamageable
         
     [SerializeField] private float _currentLife;
     [SerializeField] private DamageSoundEffectController _damageSoundEffect;
+
     #endregion
 
     #region UNITY_EVENTS
@@ -34,15 +35,20 @@ public class ObjectLife : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    public void LifeRecover(float amount)
-    {
+    public void UpdateLife(float amount) {
         _currentLife += amount;
         if (_currentLife > MaxLife) _currentLife = MaxLife;
+        if (_currentLife < 0) _currentLife = 0;
+    }
+
+    public void LifeRecover(float amount)
+    {
+        UpdateLife(amount);
     }
 
     public void TakeDamage(float damage)
     {
-        _currentLife -= damage;
+        UpdateLife(-damage);
         _damageSoundEffect.Play();
         if(_currentLife<=0) Die();
     }

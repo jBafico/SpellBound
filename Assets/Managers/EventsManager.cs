@@ -24,6 +24,10 @@ public class EventsManager : MonoBehaviour
 
         public event Action OnBossBeat;
 
+        public event Action<float> OnLifeUpdate;
+
+        public event Action<float> OnManaUpdate;
+
         //Intensity, timer
         public event Action<float, float> OnTakingDamage;
 
@@ -54,6 +58,14 @@ public class EventsManager : MonoBehaviour
         public void EventCrateDestroyed(GameObject crate)
         {
                 if (OnCrateDestroyed != null) OnCrateDestroyed(crate);
+        }
+
+        public void EventLifeUpdate(float currentLife) {
+                if(OnLifeUpdate != null) OnLifeUpdate(currentLife);
+        }
+
+        public void EventManaUpdate(float currentMana) {
+                if(OnManaUpdate != null) OnManaUpdate(currentMana);
         }
 
         #endregion
