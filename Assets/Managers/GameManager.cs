@@ -30,10 +30,12 @@ public class GameManager : MonoBehaviour
         {
                 if (_isGameOver && !_isVictory && Input.GetKey(KeyCode.Escape))
                 {
+                        Time.timeScale = 1;
                         SceneManager.LoadScene(MENU_SCENE);
                 }
                 else if (_isGameOver && _isVictory && Input.GetKey(KeyCode.Space))
                 {
+                        Time.timeScale = 1;
                         SceneManager.LoadScene(_nextLevel);
                 }
         }
