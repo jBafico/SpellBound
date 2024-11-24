@@ -3,7 +3,7 @@
 public class BossGun : Gun
 {
     #region GUN_PROPERTIES
-    private int ticks = 500;
+    private int ticks = 200;
     #endregion
 
     #region I_GUN_METHODS
@@ -17,7 +17,7 @@ public class BossGun : Gun
         if (ticks == 0)
         {
             Attack();
-            ticks = 500;
+            ticks = 200;
         }
         else
         {
