@@ -13,6 +13,7 @@ public class BossLife : MonoBehaviour, IDamageable
         
     [SerializeField] private float _currentLife;
     [SerializeField] private DamageSoundEffectController _damageSoundEffect;
+    [SerializeField] private ParticleSystem _blood;
     #endregion
 
     #region UNITY_EVENTS
@@ -46,6 +47,7 @@ public class BossLife : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         _currentLife -= damage;
+        _blood.Play();
         _damageSoundEffect.Play();
         if(_currentLife<=0) Die();
     }

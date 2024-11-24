@@ -13,6 +13,7 @@ using UnityEngine;
         
         [SerializeField] private float _currentLife;
         [SerializeField] private DamageSoundEffectController _damageSoundEffect;
+        [SerializeField] private ParticleSystem _blood;
         #endregion
 
 
@@ -52,6 +53,7 @@ using UnityEngine;
         public void TakeDamage(float damage)
         {
             UpdateLife(-damage);
+            _blood.Play();
             _damageSoundEffect.Play();
             if(gameObject.CompareTag("Player")) EventsManager.Instance.EventTakingDamage(5f,0.5f);
             if(_currentLife<=0) Die();
