@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 114056cc1dde42a391f95d4be4b713d0, type: 3}
-  m_Name: Golem
+  m_Name: Ravage Zombie
   m_EditorClassIdentifier: 
   _stats:
-    MaxLife: 80
-    MoveSpeed: 13
+    MaxLife: 50
+    MoveSpeed: 20
