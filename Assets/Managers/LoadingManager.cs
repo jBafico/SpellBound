@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    private const string NEXT_LEVEL = "Level 1";
+    public static string NEXT_LEVEL = "Level 1";
 
     #region PROPERTIES
     [SerializeField] private Image _progressBar;

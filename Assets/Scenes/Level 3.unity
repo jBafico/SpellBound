@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Layout
       objectReference: {fileID: 0}
+    - target: {fileID: 4212067755116010493, guid: 0d151943e0658bc499cbc1c9e21ff765, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 8931830723662130906, guid: 0d151943e0658bc499cbc1c9e21ff765, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -1117,7 +1121,7 @@ MonoBehaviour:
   _isGameOver: 0
   _isVictory: 0
   _gameOverMessage: {fileID: 637987024}
-  _nextLevel: Menu
+  _nextLevel: Level 4
 --- !u!114 &1602635300
 MonoBehaviour:
   m_ObjectHideFlags: 0

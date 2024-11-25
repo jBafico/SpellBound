@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
         #region GAME_MANAGER_PROPERTIES
 
         private const string MENU_SCENE = "Menu";
+        private const string LOADING_SCENE = "Loading";
         [SerializeField] private bool _isGameOver = false; //si termino el juego
         [SerializeField] private bool _isVictory = false; //si se obtuvo victoria
         [SerializeField] private TMP_Text _gameOverMessage;
@@ -36,7 +37,8 @@ public class GameManager : MonoBehaviour
                 else if (_isGameOver && _isVictory && Input.GetKey(KeyCode.Space))
                 {
                         Time.timeScale = 1;
-                        SceneManager.LoadScene(_nextLevel);
+                        LoadingManager.NEXT_LEVEL = _nextLevel;
+                        SceneManager.LoadScene(LOADING_SCENE);
                 }
         }
 

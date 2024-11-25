@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
         {
                 //Reseteo el timescale por si volvio al menu despues de perder o ganar
                 Time.timeScale = 1;
+                LoadingManager.NEXT_LEVEL = "Level 1";
                 
                 _actionPlay.onClick.AddListener(()=> LoadSceneByName(LEVEL_1_SCENE));
                 _actionCredits.onClick.AddListener(()=> LoadSceneByName(CREDITS_SCENE));
