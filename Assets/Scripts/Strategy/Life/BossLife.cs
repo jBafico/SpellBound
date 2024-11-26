@@ -29,12 +29,17 @@ public class BossLife : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        _animator.SetBool("isDead", true);
-        GetComponent<Boss>().DeactivateGun();
         if(gameObject.CompareTag("Boss"))
         {
-            EventsManager.Instance.EventBossBeat();
+            _animator.SetBool("isDead", true);
+            GetComponent<Boss>().DeactivateGun();
         }
+        EventsManager.Instance.EventBossBeat();
+        if (gameObject.CompareTag("Mage Boss"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
     
 

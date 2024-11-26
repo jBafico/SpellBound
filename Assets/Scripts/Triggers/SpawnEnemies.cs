@@ -6,8 +6,8 @@ public class SpawnEnemies : MonoBehaviour
 {
     #region VARIABLES
 
-    [SerializeField] private List<GameObject> _spawnPoints;
-    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] protected List<GameObject> _spawnPoints;
+    [SerializeField] protected GameObject _enemyPrefab;
 
     public GameObject EnemyPrefab => _enemyPrefab;
 

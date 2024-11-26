@@ -16,4 +16,4 @@ MonoBehaviour:
     BulletPrefab: {fileID: 7440574108711671764, guid: a6d134e8ecbcb40419552ac9bce87d4d, type: 3}
     Damage: 20
     MaxBullets: 10
-    ShotCount: 3
+    ShotCount: 1

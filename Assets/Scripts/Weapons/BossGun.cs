@@ -1,11 +1,9 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class BossGun : Gun
 {
-    #region GUN_PROPERTIES
-    [SerializeField] private int ticks = 200;
-    #endregion
-
+    
     #region I_GUN_METHODS
 
     private void Update()
@@ -14,14 +12,14 @@ public class BossGun : Gun
         Vector3 rotation = _mousePos - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation= Quaternion.Euler(0,0,rotZ);
-        if (ticks == 0)
+        if (_currentTicks == 0)
         {
             Attack();
-            ticks = 200;
+            _currentTicks = ticks;
         }
         else
         {
-            ticks--;
+            _currentTicks--;
         }
     }
 
