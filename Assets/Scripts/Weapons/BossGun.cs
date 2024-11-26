@@ -3,7 +3,7 @@
 public class BossGun : Gun
 {
     #region GUN_PROPERTIES
-    private int ticks = 200;
+    [SerializeField] private int ticks = 200;
     #endregion
 
     #region I_GUN_METHODS
