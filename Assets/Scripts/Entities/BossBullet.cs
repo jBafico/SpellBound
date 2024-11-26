@@ -11,7 +11,7 @@ public class BossBullet : MonoBehaviour, IBullet
 
     private Vector3 _playerPos;
     private Rigidbody2D _rb;
-    private float _force = 5;
+    [SerializeField] private float _force = 5;
     
     #endregion
 

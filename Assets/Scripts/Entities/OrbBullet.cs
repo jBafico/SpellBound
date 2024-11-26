@@ -1,16 +1,16 @@
 using System;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour, IBullet
+public class OrbBullet : MonoBehaviour, IBullet
 {
     #region PRIVATE_PROPERTIES
     [SerializeField] private float _speed = 10;
-    [SerializeField] private float _lifetime = 2;
+    [SerializeField] private float _lifetime = 15;
 
     [SerializeField] private Gun _owner;
 
-    private Vector3 _mousePos;
-    private Camera _mainCam;
+    private GameObject _target;
+    private Vector3 _playerPos;
     private Rigidbody2D _rb;
     [SerializeField] private float _force = 5;
     
@@ -33,15 +33,11 @@ public class Bullet : MonoBehaviour, IBullet
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        //Si la bala no collisiona con el Player
-        if (!collision.gameObject.CompareTag("Player"))
-        {
-            // Detectar componente o estrategia de vida y sacar daño.
-            IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
-            damageable?.TakeDamage(Owner.GunStats.Damage);
-        }
-
-        //Tambien le podemos agregar a varios tipos de daño
+        
+        // Detectar componente o estrategia de vida y sacar daño.
+        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        damageable?.TakeDamage(Owner.GunStats.Damage);
+        
         
         //Por utlimo lo destruimos
         Destroy(gameObject);
@@ -58,11 +54,11 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Start()
     {
-        _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        _mousePos = _mainCam.ScreenToWorldPoint(Input.mousePosition);
+        _target = GameObject.FindGameObjectWithTag("Player").gameObject;
+        _playerPos = _target.transform.position;
         _rb = GetComponent<Rigidbody2D>();
-        Vector3 direction = _mousePos - transform.position;
-        Vector3 rotation = transform.position - _mousePos;
+        Vector3 direction = _playerPos - transform.position;
+        Vector3 rotation = transform.position - _playerPos;
         _rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
@@ -71,7 +67,12 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Update()
     {
-        
+        _playerPos = _target.transform.position;
+        Vector3 direction = _playerPos - transform.position;
+        Vector3 rotation = transform.position - _playerPos;
+        _rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
         _lifetime -= Time.deltaTime;
         if (_lifetime <= 0) Destroy(gameObject);
     }

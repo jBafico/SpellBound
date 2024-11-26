@@ -281,7 +281,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 7808
+    m_Bits: 8064
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -301,3 +301,4 @@ MonoBehaviour:
   _speed: 50
   _lifetime: 10
   _owner: {fileID: 0}
+  _force: 10
