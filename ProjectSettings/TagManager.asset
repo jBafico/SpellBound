@@ -11,6 +11,8 @@ TagManager:
   - Door
   - Tutorial
   - Box
+  - BossTPPoint
+  - Mage Boss
   layers:
   - Default
   - TransparentFX

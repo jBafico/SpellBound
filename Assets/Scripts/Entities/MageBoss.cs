@@ -6,6 +6,8 @@ using UnityEngine;
 public class MageBoss : Boss
 {
     private string CRAWL_MOVEMENT_STRATEGY = "BossCrawl";
+    [SerializeField] private List<GameObject> _teleportationPoints;
+    private int ticks = 2000;
     public Transform target;
     //For enemy movement towards players
     public float minDist = 1f;
@@ -32,7 +34,14 @@ public class MageBoss : Boss
     {
         if (target == null)
             return;
-        
+        if (ticks == 0)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, _teleportationPoints.Count);
+            gameObject.transform.position = _teleportationPoints[randomIndex].transform.position;
+            ticks = 2000;
+        }
+
+        ticks--;
         //get the distance between the chaser and the target
         float distance = Vector2.Distance(transform.position,target.position);
 
@@ -58,5 +67,10 @@ public class MageBoss : Boss
         }
     }
 
+
+    public void assignTPPoints(List<GameObject> tpPoints)
+    {
+        _teleportationPoints = tpPoints;
+    }
     #endregion
 }

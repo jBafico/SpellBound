@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3907082672366038778}
   m_Layer: 10
   m_Name: Zombie Mage Boss
-  m_TagString: Boss
+  m_TagString: Mage Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   _bossGun: {fileID: 0}
   _characterStats: {fileID: 11400000, guid: 738e14fd0ca99e94782568cbcbbad5d4, type: 2}
   _animator: {fileID: 316517792292410803}
+  _teleportationPoints: []
   target: {fileID: 0}
   minDist: 1
 --- !u!58 &4530214755528844579
@@ -5256,7 +5257,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5278518216566663635, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
       propertyPath: ticks
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5278518216566663635, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
       propertyPath: _gunStats

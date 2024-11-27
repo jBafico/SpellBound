@@ -52,8 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 40
-  _lifetime: 2
+  _lifetime: 5
   _owner: {fileID: 0}
+  _force: 7
 --- !u!70 &2417784941527819312
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
