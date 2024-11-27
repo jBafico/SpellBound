@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 1602635297}
   - component: {fileID: 1602635296}
   - component: {fileID: 1602635295}
+  - component: {fileID: 1602635302}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1389,6 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGameOver: 0
   _isVictory: 0
+  _gameOverMessage: {fileID: 0}
   _nextLevel: Level 4
 --- !u!114 &1602635300
 MonoBehaviour:
@@ -1417,6 +1419,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602635302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602635294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9702c441ece22d74d95f3a0064350121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombiePrefab: {fileID: 8376952269994638858, guid: 17c43bd9214b10e49832f9533b7c88da, type: 3}
+  ravageZombiePrefab: {fileID: 8376952269994638858, guid: c2916fb4ba09e504e8e213ab34c44f51, type: 3}
+  orbPrefab: {fileID: 8376952269994638858, guid: e2e3ecc11cc343542ba28dc5a0b20ffe, type: 3}
+  golemPrefab: {fileID: 3613686721007452309, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
+  necromancerGolemPrefab: {fileID: 3613686721007452309, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
+  necromancerPrefab: {fileID: 0}
 --- !u!1 &1610557482
 GameObject:
   m_ObjectHideFlags: 0
