@@ -22,13 +22,11 @@ public class Sign : MonoBehaviour
     public void OnShowTutorial()
     {
         gameObject.SetActive(true);
-        Debug.Log("Tutorial shown: _showTutorial = true, _showExclamationMark = false");
     }
     
     public void OnHideTutorial()
     {
         gameObject.SetActive(false);
-        Debug.Log("Tutorial hidden: _showTutorial = false, _showExclamationMark = true");
     }
 
     #endregion
