@@ -36,7 +36,13 @@ public class Npc : MonoBehaviour
         if (!_showTutorial && hitInfo.collider != null && hitInfo.collider.CompareTag("Player"))
         {
             _showTutorial = true;
-            _showExclamationMark = false;
+            if (_showExclamationMark)
+            {
+                _showExclamationMark = false;
+                SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+                Destroy(spriteRenderers[1]);
+            }
+            
             EventsManager.Instance.EventShowTutorial();
         }
 
@@ -44,7 +50,6 @@ public class Npc : MonoBehaviour
         if (_showTutorial && (hitInfo.collider == null || !hitInfo.collider.CompareTag("Player")))
         {
             _showTutorial = false;
-            _showExclamationMark = true;
             EventsManager.Instance.EventHideTutorial();
             
         }

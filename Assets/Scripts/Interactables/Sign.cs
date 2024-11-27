@@ -11,6 +11,7 @@ public class Sign : MonoBehaviour
     {
         EventsManager.Instance.OnShowTutorial += OnShowTutorial;
         EventsManager.Instance.OnHideTutorial += OnHideTutorial;
+        gameObject.SetActive(false);
     }
 
     #endregion
