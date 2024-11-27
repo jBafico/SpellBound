@@ -5261,6 +5261,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5278518216566663635, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278518216566663635, guid: a9dd4ccd5ab8acd4bb8107fc73a43816, type: 3}
       propertyPath: _gunStats
       value: 
       objectReference: {fileID: 11400000, guid: 1bb027769b0722346bdc380ad08e288b, type: 2}
