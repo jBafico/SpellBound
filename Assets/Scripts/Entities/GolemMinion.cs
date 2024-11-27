@@ -6,17 +6,16 @@ public class GolemMinion : Enemy
     #region CONSTANT_PROPERTIES
     
     private string WALK_MOVEMENT_STRATEGY = "EntityWalk";
-    private float moveDuration = 5f; // Duration to move (in seconds)
-    private float pauseDuration = 2f; // Duration to pause (in seconds)
+    [SerializeField] private float moveDuration = 5f; 
+    [SerializeField] private float pauseDuration = 2f; 
     
     #endregion
     
     #region PROPERTIES
     
     private EntityWalk _characterWalk;
-    private IMoveable _movementLogic;
-    private float timer; // Timer to track movement/pause intervals
-    private bool isMoving = true; // State flag to determine if moving or pausing
+    private float timer; 
+    private bool isMoving = true; 
     
     #endregion
     
@@ -36,7 +35,7 @@ public class GolemMinion : Enemy
             }
         }
         
-        timer = moveDuration; // Start with moving state
+        timer = moveDuration; 
     }
 
     private void Update()
@@ -44,12 +43,12 @@ public class GolemMinion : Enemy
         if (target == null)
             return;
 
-        // Decrease the timer based on time elapsed since the last frame
+        
         timer -= Time.deltaTime;
 
         if (isMoving)
         {
-            // Move towards the target if within the movement phase
+            
             float distance = Vector2.Distance(transform.position, target.position);
 
             if (distance > minDist)
@@ -57,7 +56,7 @@ public class GolemMinion : Enemy
                 _movementLogic.MoveTowards(target.position);
             }
 
-            // Switch to pause state when the movement duration ends
+            
             if (timer <= 0f)
             {
                 isMoving = false;
@@ -66,7 +65,7 @@ public class GolemMinion : Enemy
         }
         else
         {
-            // Switch back to moving state when the pause duration ends
+            
             if (timer <= 0f)
             {
                 isMoving = true;

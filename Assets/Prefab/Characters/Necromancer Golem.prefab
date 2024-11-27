@@ -4952,6 +4952,8 @@ MonoBehaviour:
   target: {fileID: 0}
   _damage: 20
   _characterStats: {fileID: 11400000, guid: 5dbee8c295e546d45897487ab53a5b8e, type: 2}
+  moveDuration: 2
+  pauseDuration: 2
 --- !u!61 &5176149584125941105
 BoxCollider2D:
   m_ObjectHideFlags: 0

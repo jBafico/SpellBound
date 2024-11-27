@@ -189,6 +189,7 @@ MonoBehaviour:
   _characterStats: {fileID: 11400000, guid: 738e14fd0ca99e94782568cbcbbad5d4, type: 2}
   _animator: {fileID: 316517792292410803}
   _teleportationPoints: []
+  teleportInterval: 7
   target: {fileID: 0}
   minDist: 1
 --- !u!58 &4530214755528844579
