@@ -11,9 +11,6 @@ public class Gun : MonoBehaviour, IGun
     #region GUN_PROPERTIES
     [SerializeField] private int _currentBulletCount;
     
-    protected int _currentTicks;
-    [SerializeField] protected int ticks = 200;
-    
     #endregion
 
     #region I_GUN_PROPERTIES

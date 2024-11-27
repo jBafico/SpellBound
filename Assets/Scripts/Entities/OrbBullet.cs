@@ -67,6 +67,7 @@ public class OrbBullet : MonoBehaviour, IBullet
 
     private void Update()
     {
+        if(_target == null) return;
         _playerPos = _target.transform.position;
         Vector3 direction = _playerPos - transform.position;
         Vector3 rotation = transform.position - _playerPos;

@@ -3,43 +3,42 @@ using UnityEngine;
 
 public class OrbGun : Gun
 {
-    
+    #region PROPERTIES
+    private float _currentTimer; 
+    [SerializeField] public float fireRate = 2f;
+    #endregion
+
     #region I_GUN_METHODS
 
     private void Update()
     {
-        _mousePos = _mainCam.ScreenToWorldPoint(GameObject.FindGameObjectWithTag("Player").gameObject.transform.position);
+        _mousePos = _mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 rotation = _mousePos - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation= Quaternion.Euler(0,0,rotZ);
-        if (_currentTicks == 0)
+        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        // le resto el deltaTime
+        _currentTimer -= Time.deltaTime;
+        if (_currentTimer <= 0f)
         {
             Attack();
-            _currentTicks = ticks;
-        }
-        else
-        {
-            _currentTicks--;
+            _currentTimer = fireRate;
         }
     }
 
     public void Attack()
     {
-        
-        for (int i = 0; i < GunStats.ShotCount ; i++)
+        for (int i = 0; i < GunStats.ShotCount; i++)
         {
             GameObject bullet = Instantiate(
                 BulletPrefab,
-                transform.position + Vector3.forward * i * .6f,
+                transform.position + Vector3.forward * i * 0.6f,
                 Quaternion.identity);
-            //Seteamos el owner de la bala
-            bullet.GetComponent<IBullet>().SetOwner(this);
                 
+            // Set the owner of the bullet
+            bullet.GetComponent<IBullet>().SetOwner(this);
         }
-        
     }
 
-    
-    
     #endregion
 }
