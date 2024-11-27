@@ -1891,6 +1891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 357570145}
     m_Modifications:
+    - target: {fileID: 768328226270891223, guid: 09ff06ed39b4b3344bb557c76ade80ff, type: 3}
+      propertyPath: m_text
+      value: "W, A, S, D \t-> MOVE\nLMB  \t\t-> FIRE\nR   \t\t-> RELOAD"
+      objectReference: {fileID: 0}
     - target: {fileID: 2057812418640327734, guid: 09ff06ed39b4b3344bb557c76ade80ff, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -1942,6 +1946,10 @@ PrefabInstance:
     - target: {fileID: 8493494857724278829, guid: 09ff06ed39b4b3344bb557c76ade80ff, type: 3}
       propertyPath: m_Name
       value: TutorialSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493494857724278829, guid: 09ff06ed39b4b3344bb557c76ade80ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

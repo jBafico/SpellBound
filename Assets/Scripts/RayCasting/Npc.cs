@@ -35,27 +35,20 @@ public class Npc : MonoBehaviour
         // Check if the ray hits something and is not currently showing the tutorial
         if (!_showTutorial && hitInfo.collider != null && hitInfo.collider.CompareTag("Player"))
         {
-            ShowTutorial();
+            _showTutorial = true;
+            _showExclamationMark = false;
+            EventsManager.Instance.EventShowTutorial();
         }
 
         // Check if the ray does not hit anything and the tutorial is currently showing
         if (_showTutorial && (hitInfo.collider == null || !hitInfo.collider.CompareTag("Player")))
         {
-            UnShowTutorial();
+            _showTutorial = false;
+            _showExclamationMark = true;
+            EventsManager.Instance.EventHideTutorial();
+            
         }
     }
 
-    private void ShowTutorial()
-    {
-        _showTutorial = true;
-        _showExclamationMark = false;
-        Debug.Log("Tutorial shown: _showTutorial = true, _showExclamationMark = false");
-    }
-
-    private void UnShowTutorial()
-    {
-        _showTutorial = false;
-        _showExclamationMark = true;
-        Debug.Log("Tutorial hidden: _showTutorial = false, _showExclamationMark = true");
-    }
+   
 }

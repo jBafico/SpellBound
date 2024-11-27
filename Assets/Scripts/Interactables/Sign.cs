@@ -3,29 +3,31 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Sign : MonoBehaviour, IInteractable
+public class Sign : MonoBehaviour
 {
-    [SerializeField] private GameObject _popUpBox;
-    
     #region UNITY_METHODS
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void Start()
     {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)) OnInteract();
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.gameObject.CompareTag("Player")) _popUpBox.SetActive(false);
+        EventsManager.Instance.OnShowTutorial += OnShowTutorial;
+        EventsManager.Instance.OnHideTutorial += OnHideTutorial;
     }
 
     #endregion
     
-    #region IINTERACTABLE_METHODS
+    
+    #region SIGN_METHODS
 
-    public void OnInteract()
+    public void OnShowTutorial()
     {
-        _popUpBox.SetActive(true);
+        gameObject.SetActive(true);
+        Debug.Log("Tutorial shown: _showTutorial = true, _showExclamationMark = false");
+    }
+    
+    public void OnHideTutorial()
+    {
+        gameObject.SetActive(false);
+        Debug.Log("Tutorial hidden: _showTutorial = false, _showExclamationMark = true");
     }
 
     #endregion
