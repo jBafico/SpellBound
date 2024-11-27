@@ -21,8 +21,10 @@ public class EntityWalk : MonoBehaviour, IMoveable
         transform.position = Vector2.MoveTowards(transform.position,target, Speed*Time.deltaTime);
     }
         
-    //activar animacion de caminar
-    //activar sonidos de pasos de caminar
+    public void MoveAway(Vector2 target)
+    {
+        transform.position = Vector2.MoveTowards(transform.position,target, -1*Speed*Time.deltaTime);
+    }
         
     #endregion 
 }

@@ -1,29 +1,12 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Necromancer : Enemy
 {
-    #region CONSTANT_PROPERTIES
-    
-    protected string CRAWL_MOVEMENT_STRATEGY = "EntityCrawl";
-    
-    //For enemy movement towards players
-    public float minDist = 1f;
-    public Transform target;
-    
-    public float Damage => _damage;
-    [SerializeField] private float _damage = 20;
-    #endregion
-    
-    #region PROPERTIES
-    
-    public CharacterStats CharacterStats => _characterStats;
-    [SerializeField] private CharacterStats _characterStats;
+    private float ticks = 1000;
+    [SerializeField] private EnemyFactory.EnemyType _enemyType;
 
-    protected EntityCrawl _characterCrawl;
-    protected IMoveable _movementLogic;
-    
-    #endregion
+    private EnemyFactory _enemyFactory;
     
     void Start()
     {
@@ -31,6 +14,7 @@ public class Enemy : MonoBehaviour
         
         _characterCrawl = GetComponent<EntityCrawl>();
         _movementLogic = _characterCrawl;
+        _enemyFactory = EnemyFactory.instance;
         
         // if no target specified, assume the player
         if (target == null) {
@@ -40,19 +24,30 @@ public class Enemy : MonoBehaviour
                 target = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
+        
     }
-
     private void Update()
     {
         if (target == null)
             return;
-        
+        if (ticks == 0)
+        {
+            // Calculate the direction from the necromancer to the target
+            Vector2 directionToTarget = (target.position - transform.position).normalized;
+
+            // Calculate the spawn point in front of the necromancer
+            Vector2 spawnPosition = (Vector2)transform.position + directionToTarget * 1f; // Offset of 1 unit in front
+
+            _enemyFactory.CreateEnemy(_enemyType, spawnPosition);
+            ticks = 1000;
+        }
         //get the distance between the chaser and the target
         float distance = Vector2.Distance(transform.position,target.position);
 
-        //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
-        if(distance > minDist)	
-            _movementLogic.MoveTowards(target.position);
+        //so long as the chaser is nearer than the minimum distance, move towards it at rate speed.
+        if(distance < minDist)	
+            _movementLogic.MoveAway(target.position);
+        ticks--;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,11 +57,11 @@ public class Enemy : MonoBehaviour
         {
             // Detectar componente o estrategia de vida y sacar daño.
             IDamageable damageable= collision.gameObject.GetComponent<IDamageable>();
-            damageable?.TakeDamage(_damage);
+            damageable?.TakeDamage(Damage);
         }
         
     }
-
+    
     #region PRIVATE_METHODS
 
     private void AddDynamicComponent(string name)
@@ -85,4 +80,5 @@ public class Enemy : MonoBehaviour
     }
 
     #endregion
+    
 }
