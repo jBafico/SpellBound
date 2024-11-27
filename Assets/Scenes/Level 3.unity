@@ -122,6 +122,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &82650658
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.733005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.710825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402020263518513441, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000225402707881697, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
+      propertyPath: m_Name
+      value: Necromancer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
 --- !u!1001 &377651484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,63 +343,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 377651485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &725929215
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.67652
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.748476
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000225402707881697, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-      propertyPath: m_Name
-      value: Necromancer Golem
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
 --- !u!1001 &786835278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,9 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c6341417db4d7f9dbddf5517c77253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPoints:
-  - {fileID: 1305846960}
-  _enemyPrefab: {fileID: 7129293662740663450, guid: 5824ddadb0b22734fad43bc4548b0b8c, type: 3}
+  _spawnPoint: {fileID: 0}
+  _bossPrefab: {fileID: 0}
   _tpPoints:
   - {fileID: 1305846960}
   - {fileID: 1952341813}
@@ -763,63 +762,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1131868871
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402020263518513441, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000225402707881697, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
-      propertyPath: m_Name
-      value: Golem
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
 --- !u!1 &1149451426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGameOver: 0
   _isVictory: 0
-  _gameOverMessage: {fileID: 0}
   _nextLevel: Level 4
 --- !u!114 &1602635300
 MonoBehaviour:
@@ -1436,7 +1377,7 @@ MonoBehaviour:
   orbPrefab: {fileID: 8376952269994638858, guid: e2e3ecc11cc343542ba28dc5a0b20ffe, type: 3}
   golemPrefab: {fileID: 3613686721007452309, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
   necromancerGolemPrefab: {fileID: 3613686721007452309, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-  necromancerPrefab: {fileID: 0}
+  necromancerPrefab: {fileID: 5059944716076517327, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
 --- !u!1 &1610557482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,5 +2219,4 @@ SceneRoots:
   - {fileID: 1813990788}
   - {fileID: 377651484}
   - {fileID: 511562454}
-  - {fileID: 725929215}
-  - {fileID: 1131868871}
+  - {fileID: 82650658}

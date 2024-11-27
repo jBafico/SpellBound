@@ -1361,7 +1361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGameOver: 0
   _isVictory: 0
-  _gameOverMessage: {fileID: 0}
   _nextLevel: Level 2
 --- !u!114 &1771470611
 MonoBehaviour:
@@ -1463,7 +1462,7 @@ MonoBehaviour:
   orbPrefab: {fileID: 8376952269994638858, guid: e2e3ecc11cc343542ba28dc5a0b20ffe, type: 3}
   golemPrefab: {fileID: 3613686721007452309, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
   necromancerGolemPrefab: {fileID: 3613686721007452309, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-  necromancerPrefab: {fileID: 0}
+  necromancerPrefab: {fileID: 5059944716076517327, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
 --- !u!1001 &1773594098
 PrefabInstance:
   m_ObjectHideFlags: 0

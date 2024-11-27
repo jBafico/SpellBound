@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 45.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2179504851199953393, guid: dae5a217afeb2bc4d81b3d9197a7d535, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3011198985192787121, guid: dae5a217afeb2bc4d81b3d9197a7d535, type: 3}
       propertyPath: m_Color.b
       value: 0.654902
@@ -313,7 +317,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2474171586595702190, guid: dae5a217afeb2bc4d81b3d9197a7d535, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1706541189}
   m_SourcePrefab: {fileID: 100100000, guid: dae5a217afeb2bc4d81b3d9197a7d535, type: 3}
 --- !u!114 &145201815 stripped
 MonoBehaviour:
@@ -706,6 +713,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4571744588482120867, guid: 5a68e7f163701764097f72089f30e30f, type: 3}
   m_PrefabInstance: {fileID: 1636254804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &675071799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6492596781512698700, guid: dae5a217afeb2bc4d81b3d9197a7d535, type: 3}
+  m_PrefabInstance: {fileID: 124694464}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &820382898
 GameObject:
@@ -1198,6 +1210,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1532602376123937523, guid: 5a68e7f163701764097f72089f30e30f, type: 3}
   m_PrefabInstance: {fileID: 1636254804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1706541185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2474171586595702190, guid: dae5a217afeb2bc4d81b3d9197a7d535, type: 3}
+  m_PrefabInstance: {fileID: 124694464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1706541189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706541185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b29b09bafd6402d8006525777cdf882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 675071799}
+  _enemyType: 1
 --- !u!1 &1771470609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGameOver: 0
   _isVictory: 0
-  _gameOverMessage: {fileID: 0}
   _nextLevel: Level 3
 --- !u!114 &1771470611
 MonoBehaviour:
@@ -1337,7 +1368,7 @@ MonoBehaviour:
   orbPrefab: {fileID: 8376952269994638858, guid: e2e3ecc11cc343542ba28dc5a0b20ffe, type: 3}
   golemPrefab: {fileID: 3613686721007452309, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
   necromancerGolemPrefab: {fileID: 3613686721007452309, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-  necromancerPrefab: {fileID: 0}
+  necromancerPrefab: {fileID: 5059944716076517327, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
 --- !u!1001 &1802886772
 PrefabInstance:
   m_ObjectHideFlags: 0

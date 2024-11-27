@@ -411,9 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c6341417db4d7f9dbddf5517c77253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPoints:
-  - {fileID: 1779969538}
-  _enemyPrefab: {fileID: 7129293662740663450, guid: 5824ddadb0b22734fad43bc4548b0b8c, type: 3}
+  _spawnPoint: {fileID: 0}
+  _bossPrefab: {fileID: 0}
   _tpPoints:
   - {fileID: 1779969538}
   - {fileID: 2036286776}
@@ -1855,7 +1854,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGameOver: 0
   _isVictory: 0
-  _gameOverMessage: {fileID: 0}
   _nextLevel: Victory
 --- !u!114 &1638060788
 MonoBehaviour:
@@ -1901,7 +1899,7 @@ MonoBehaviour:
   orbPrefab: {fileID: 8376952269994638858, guid: e2e3ecc11cc343542ba28dc5a0b20ffe, type: 3}
   golemPrefab: {fileID: 3613686721007452309, guid: 183c3336c88c80d42b39cf22cbd164e8, type: 3}
   necromancerGolemPrefab: {fileID: 3613686721007452309, guid: cc41406ffaaa14547a873edd0349d01b, type: 3}
-  necromancerPrefab: {fileID: 0}
+  necromancerPrefab: {fileID: 5059944716076517327, guid: a88f583e5a192ef4fa456f4d6aee01a0, type: 3}
 --- !u!1 &1779969538
 GameObject:
   m_ObjectHideFlags: 0
