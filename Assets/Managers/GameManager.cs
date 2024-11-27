@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
         [SerializeField] private bool _isVictory = false; //si se obtuvo victoria
         [SerializeField] private TMP_Text _gameOverMessage;
         [SerializeField] private String _nextLevel;
-        
 
         #endregion
 

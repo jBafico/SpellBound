@@ -7,9 +7,14 @@ public class SpawnEnemies : MonoBehaviour
     #region VARIABLES
 
     [SerializeField] private List<GameObject> _spawnPoints;
-    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private EnemyFactory.EnemyType _enemyType;
 
-    public GameObject EnemyPrefab => _enemyPrefab;
+    private EnemyFactory _enemyFactory;
+
+    private void Start() 
+    {
+        _enemyFactory = EnemyFactory.instance;
+    }
 
     #endregion
     
@@ -24,7 +29,7 @@ public class SpawnEnemies : MonoBehaviour
             }
             foreach (var spawnPoint in _spawnPoints)
             {
-                Instantiate(EnemyPrefab, spawnPoint.GetComponent<Transform>().position, Quaternion.identity);
+                _enemyFactory.CreateEnemy(_enemyType, spawnPoint.transform.position);
             }
 
             Destroy(this);
