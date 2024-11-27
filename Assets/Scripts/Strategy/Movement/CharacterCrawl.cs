@@ -13,6 +13,14 @@ public class CharacterCrawl : MonoBehaviour, IMoveable
     public void Move(Vector2 direction)
     {
         Vector3 movement = direction;
+        if (direction.x > 0)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f));
+        }
+        else if (direction.x < 0)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f));
+        }
         transform.position +=  movement * Time.deltaTime * Speed;
     }
 

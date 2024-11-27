@@ -15,6 +15,14 @@ using UnityEngine;
         public void Move(Vector2 direction)
         {
             _animator.SetFloat("Speed", 0.2f);
+            if (direction.x > 0)
+            {
+                gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f));
+            }
+            else if (direction.x < 0)
+            {
+                gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f));
+            }
             Vector3 movement = direction;
             transform.position +=  movement * Time.deltaTime * Speed;
         }
