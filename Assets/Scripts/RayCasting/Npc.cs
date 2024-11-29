@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Npc : MonoBehaviour
 {
-    [SerializeField] private float distance = 5.0f;  
+    [SerializeField] private float distance = 5.0f;
+    [SerializeField] private GameObject _tutorialSign;
 
     private bool _showExclamationMark = true;
     private bool _showTutorial = false;
@@ -24,14 +26,20 @@ public class Npc : MonoBehaviour
                 Destroy(spriteRenderers[1]);
             }
             
-            EventsManager.Instance.EventShowTutorial();
+            _tutorialSign.GetComponent<Sign>().ShowTutorial();
+        }
+
+        //If the tutorial is showing and player presses E, the tutorial finishes
+        if (_showTutorial && hitInfo.collider != null && hitInfo.collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        {
+            EventsManager.Instance.EventGameOver(true);
         }
 
         // Check if the ray does not hit anything and the tutorial is currently showing
         if (_showTutorial && (hitInfo.collider == null || !hitInfo.collider.CompareTag("Player")))
         {
             _showTutorial = false;
-            EventsManager.Instance.EventHideTutorial();
+            _tutorialSign.GetComponent<Sign>().HideTutorial();
         }
     }
 

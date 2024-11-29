@@ -9,8 +9,6 @@ public class Sign : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.Instance.OnShowTutorial += OnShowTutorial;
-        EventsManager.Instance.OnHideTutorial += OnHideTutorial;
         gameObject.SetActive(false);
     }
 
@@ -19,12 +17,12 @@ public class Sign : MonoBehaviour
     
     #region SIGN_METHODS
 
-    public void OnShowTutorial()
+    public void ShowTutorial()
     {
         gameObject.SetActive(true);
     }
     
-    public void OnHideTutorial()
+    public void HideTutorial()
     {
         gameObject.SetActive(false);
     }

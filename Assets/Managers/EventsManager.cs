@@ -34,10 +34,7 @@ public class EventsManager : MonoBehaviour
         public event Action OnTutorialFinished;
 
         public event Action<GameObject> OnCrateDestroyed;
-
-        public event Action OnShowTutorial;
-
-        public event Action OnHideTutorial;
+        
 
         public void EventGameOver(bool isVictory)
         {
@@ -71,16 +68,7 @@ public class EventsManager : MonoBehaviour
         public void EventManaUpdate(float currentMana) {
                 if(OnManaUpdate != null) OnManaUpdate(currentMana);
         }
-
-        public void EventShowTutorial()
-        {
-                if (OnShowTutorial != null) OnShowTutorial();
-        }
         
-        public void EventHideTutorial()
-        {
-                if (OnHideTutorial != null) OnHideTutorial();
-        }
 
         #endregion
 
