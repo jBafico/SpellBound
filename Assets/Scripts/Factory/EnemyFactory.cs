@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    public enum EnemyType { Zombie, RavageZombie, Orb, Golem, NecromancerGolem, Necromancer}
+    public enum EnemyType { Zombie, RavageZombie, Orb, Golem, NecromancerGolem, Necromancer, Ball, Ghost}
 
     [SerializeField] private Enemy zombiePrefab;
     [SerializeField] private Enemy ravageZombiePrefab;
@@ -10,6 +10,8 @@ public class EnemyFactory : MonoBehaviour
     [SerializeField] private Enemy golemPrefab;
     [SerializeField] private Enemy necromancerGolemPrefab;
     [SerializeField] private Enemy necromancerPrefab;
+    [SerializeField] private Enemy ballPrefab;
+    [SerializeField] private Enemy ghostPrefab;
 
     private IFactory<Enemy> _factory = new Spawner<Enemy>();
 
@@ -44,6 +46,12 @@ public class EnemyFactory : MonoBehaviour
                 break;
             case EnemyType.Necromancer:
                 enemyInstance = _factory.Create(necromancerPrefab);
+                break;
+            case EnemyType.Ball:
+                enemyInstance = _factory.Create(ballPrefab);
+                break;
+            case EnemyType.Ghost:
+                enemyInstance = _factory.Create(ghostPrefab);
                 break;
         }
 

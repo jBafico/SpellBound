@@ -13,6 +13,7 @@ TagManager:
   - Box
   - BossTPPoint
   - Mage Boss
+  - Enemy
   layers:
   - Default
   - TransparentFX
