@@ -2790,8 +2790,8 @@ PrefabInstance:
       value: 'Quizas valga la pena investigar este piso por completo.
 
 
-        Parece
-        que hay un hechizo que te volvera mas fuerte.'
+        Podria
+        haber un hechizo que te volvera mas fuerte.'
       objectReference: {fileID: 0}
     - target: {fileID: 768328226270891223, guid: 09ff06ed39b4b3344bb557c76ade80ff, type: 3}
       propertyPath: m_fontSize
@@ -5474,7 +5474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7204266797863122734, guid: 5fb535d6dfa0b094ea004a9a2a135bcb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -700
+      value: -700.00006
       objectReference: {fileID: 0}
     - target: {fileID: 7204266797863122734, guid: 5fb535d6dfa0b094ea004a9a2a135bcb, type: 3}
       propertyPath: m_AnchoredPosition.y
