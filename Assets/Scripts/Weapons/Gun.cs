@@ -55,6 +55,11 @@ public class Gun : MonoBehaviour, IGun
     }
     #endregion
 
+    protected void UpdateGunStats(GunStats gunStats)
+    {
+        _gunStats = gunStats;
+    }
+
     
     
 }

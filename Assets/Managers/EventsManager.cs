@@ -35,6 +35,8 @@ public class EventsManager : MonoBehaviour
 
         public event Action<GameObject> OnCrateDestroyed;
 
+        public event Action OnSpellPickup;
+
 
         public void EventGameOver(bool isVictory)
         {
@@ -67,6 +69,11 @@ public class EventsManager : MonoBehaviour
 
         public void EventManaUpdate(float currentMana) {
                 if(OnManaUpdate != null) OnManaUpdate(currentMana);
+        }
+
+        public void EventSpellPickup()
+        {
+                if (OnSpellPickup != null) OnSpellPickup();
         }
 
 
