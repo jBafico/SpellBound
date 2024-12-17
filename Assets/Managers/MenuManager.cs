@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
         //Le pasamos el loading porque el loading va a cargar el level
-        private const string LEVEL_1_SCENE = "Loading";
+        private const string LEVEL_1_SCENE = "Intro";
         private const string CREDITS_SCENE = "Credits";
 
         [SerializeField] private Button _actionPlay;
@@ -17,7 +16,6 @@ public class MenuManager : MonoBehaviour
         {
                 //Reseteo el timescale por si volvio al menu despues de perder o ganar
                 Time.timeScale = 1;
-                LoadingManager.NEXT_LEVEL = "Tutorial";
                 //We reset the spell of the mage to the basic one
                 MageSpell.mageGunNumber = 0;
                 
