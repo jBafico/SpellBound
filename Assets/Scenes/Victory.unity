@@ -1191,9 +1191,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Congratulations!\n\nYou've helped Borvo reach the depths of the dungeon
-    and gain great knowledge\n\n\nWe hope you've liked our game\nPress Return to
-    go back to the main menu"
+  m_text: "\xA1Felicidades!\n\n\xA1Has ayudado a Borvo a alcanzar las profundidades
+    de la mazmorra y romper el portal demon\xEDaco!\nLos ciudadanos de Promethea
+    ahora est\xE1n a salvo.\n\nEsperamos que te haya gustado nuestro juego.\nPresiona
+    Return para volver al men\xFA principal"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41af4c3911bcc974ea0c40e84575a697, type: 2}
   m_sharedMaterial: {fileID: -9091231645932373475, guid: 41af4c3911bcc974ea0c40e84575a697, type: 2}
@@ -1256,7 +1257,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -94.938934, y: -36.27748, z: -101.88562, w: 0}
+  m_margin: {x: -190.79749, y: -36.27748, z: -192.60889, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -203,7 +203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -153}
+  m_AnchoredPosition: {x: 0, y: -174}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609995263
@@ -523,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2241732273327019579, guid: 6e1cc8366d5ff9d439159794844383bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -224
+      value: -245.00002
       objectReference: {fileID: 0}
     - target: {fileID: 2241732273327019579, guid: 6e1cc8366d5ff9d439159794844383bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -681,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 1489975780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 141.561, z: -5049}
+  m_LocalPosition: {x: 0, y: 164.56099, z: -5049}
   m_LocalScale: {x: 56.100002, y: 56.100002, z: 56.100002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1172,7 +1172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 37.99999}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927398407
@@ -1195,9 +1195,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Oh No!\n\nBorvo has been slain by the monsters of the dungeon depths\n\nThis
-    time he may have been defeated but he will not forsake his goal\n\nPress Return
-    to go back to the main menu"
+  m_text: "\xA1Oh, no!\n\nBorvo ha sido derrotado por los monstruos de las profundidades
+    de la mazmorra.\n\nEsta vez puede que haya sido vencido, pero no abandonar\xE1
+    su objetivo.\nNo podr\xE1 descansar hasta que los ciudadanos de Promethea est\xE9n
+    a salvo.\n\nPresiona Return para volver al men\xFA principal."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41af4c3911bcc974ea0c40e84575a697, type: 2}
   m_sharedMaterial: {fileID: -9091231645932373475, guid: 41af4c3911bcc974ea0c40e84575a697, type: 2}
@@ -1260,7 +1261,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -94.938934, y: -36.27748, z: -101.88562, w: 0}
+  m_margin: {x: -190.79749, y: -36.27748, z: -190.04123, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
