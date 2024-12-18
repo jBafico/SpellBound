@@ -1118,18 +1118,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Borvo, mago de la corte de la capital Promethea del continente de Eorzea,
-    fue encargado con el gran deber de ayudar a su ciudad. \n\nDurante el \xFAltimo
-    mes miles y miles de creaturas demoniacas acecharon al ciudad de Promethea, causando
-    muerte y destrucci\xF3n. En medio de toda la desesperaci\xF3n, la corte encontr\xF3
+    fue encargado con el gran deber de ayudar a su ciudad. \n\nDurante el ultimo
+    mes miles y miles de creaturas demoniacas acecharon a la ciudad de Promethea,
+    causando muerte y destruccion. En medio de toda la desesperacion, la corte encontro
     el origen de donde estaban saliendo esa cantidad de monstruos, una mazmorra en
     el borde de las monta\xF1as de Highterra.\n\nAl no saber que se encontraba dentro,
-    decidieron mandar al m\xE1s poderoso miembro de la corte para solucionarlo, en
-    una misi\xF3n individual mientras los otros miembros se quedaban defendiendo
-    la capital.\n\nAceptando la misi\xF3n Borvo viajo enfrent\xE1ndose a varios monstruos
-    hasta llegar a la puerta de la mazmorra donde tendr\xE1 que adentrarse hasta
-    sus profundidades para descubrir que es lo que est\xE1 ocurriendo y solucionarlo
-    de una vez por todas. Lo que no sabe Borvo, es que no ser\xE1 tan f\xE1cil como
-    \xE9l piensa..... "
+    decidieron mandar al mas poderoso miembro de la corte para solucionarlo, en una
+    mision individual, mientras los otros miembros se quedaban defendiendo la capital.\n\nAceptando
+    la mision, Borvo viajo enfrentandose a varios monstruos hasta llegar a la puerta
+    de la mazmorra donde tendra que adentrarse hasta sus profundidades para descubrir
+    que es lo que esta ocurriendo y solucionarlo de una vez por todas. Lo que no
+    sabe Borvo, es que no sera tan f\xE1cil como el piensa..... "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41af4c3911bcc974ea0c40e84575a697, type: 2}
   m_sharedMaterial: {fileID: -9091231645932373475, guid: 41af4c3911bcc974ea0c40e84575a697, type: 2}
